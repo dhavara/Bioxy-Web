@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('KELD_Admin'),
             'school' => 'Universitas Ciputra',
             'city' => 'Surabaya',
+            'birthdate' => '01012002',
             'created_at' => \Carbon\Carbon::now(),
             'email_verified_at' => \Carbon\Carbon::now()
         ]);
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'school' => 'Lorem Ipsum High School',
             'city' => 'Dolor City',
+            'birthdate' => '01012002',
             'created_at' => \Carbon\Carbon::now(),
             'email_verified_at' => \Carbon\Carbon::now()
         ]);
