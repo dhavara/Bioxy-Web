@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('bio11_users')->insert([
             'username' => 'Admin',
             'name' => 'KELD Administrator',
             'email' => 'admin@keld2021.com',
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             'created_at' => \Carbon\Carbon::now(),
             'email_verified_at' => \Carbon\Carbon::now()
         ]);
-        DB::table('users')->insert([
+        DB::table('bio11_users')->insert([
             'username' => 'User',
             'name' => 'Awanama',
             'email' => 'user@keld2021.com',
