@@ -24,7 +24,7 @@
             position: relative;
         }
         .colorp{
-            color: #bb6bda;
+            color: #bb6bda; 
         }
     </style>
 </head>
