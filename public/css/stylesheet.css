@@ -1,0 +1,21 @@
+/* body {
+    position: relative;
+    background: #bb6bda;
+}
+
+.colorp {
+    color: #bb6bda;
+} */
+
+#user_img {
+    position:absolute;
+    left: 150px;
+    z-index:0;
+}
+
+#user_frame {
+    position:absolute;
+    left: 150px;
+    z-index:1;
+
+}

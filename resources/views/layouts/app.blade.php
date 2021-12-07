@@ -18,15 +18,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        body {
-            position: relative;
-        }
-        .colorp{
-            color: #bb6bda; 
-        }
-    </style>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="container">
