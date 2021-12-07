@@ -24,4 +24,7 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
+Route::middleware(['auth'])->group(function(){
+    Route::post('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profilePost'])->name('profile');
+    Route::get('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profileGet']);
+});

@@ -30,7 +30,7 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Bioxy') }}
@@ -67,6 +67,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('profile-form').submit();">
+                                        {{ __('Profile') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -74,6 +80,10 @@
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
+                                    <form id="profile-form" action="{{ route('profile') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
@@ -84,7 +94,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 pt-5 mt-3 pb-5 mb-3">
             @yield('content')
         </main>
     </div>

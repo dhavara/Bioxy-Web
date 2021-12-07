@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\UserDetail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -57,7 +58,6 @@ class RegisterController extends Controller
             'school' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
             'birthdate' => ['required', 'date', 'max:255'],
-
         ]);
     }
 
@@ -69,7 +69,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'username' => $data['username'],
             'name' => $data['name'],
             'email' => $data['email'],
@@ -78,5 +78,11 @@ class RegisterController extends Controller
             'city' => $data['city'],
             'birthdate' => idate('d', strtotime($data['birthdate'])) . idate('m', strtotime($data['birthdate'])) . idate('Y', strtotime($data['birthdate']))
         ]);
+
+        UserDetail::create([
+            'user_id' => User::firstWhere('name', $data['name'])['id'],
+        ]);
+
+        return $user;
     }
 }
