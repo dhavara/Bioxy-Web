@@ -29,6 +29,10 @@ class User extends Authenticatable
         'birthdate'
     ];
 
+    public function detail() {
+        return $this->hasOne(UserDetail::class, 'user_id', 'id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

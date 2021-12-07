@@ -25,4 +25,8 @@ class UserDetail extends Model
         'is_login',
         'is_active'
     ];
+
+    public function user() {
+        return $this->belongsTo(UserDetail::class, 'user_id', 'id');
+    }
 }
