@@ -27,4 +27,11 @@ Auth::routes();
 Route::middleware(['auth'])->group(function(){
     Route::post('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profilePost'])->name('profile');
     Route::get('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profileGet']);
+
+    
+    Route::get('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'show'])->name('quiz');
+    Route::post('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'check'])->name('check');
+    Route::post('/quiz/start', [App\Http\Controllers\Soal\QuizController::class, 'difficulty'])->name('difficulty');
+    Route::get('/quiz/start', [App\Http\Controllers\Soal\QuizController::class, 'difficulty']);
+
 });

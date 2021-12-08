@@ -17,5 +17,8 @@
     position:absolute;
     left: 150px;
     z-index:1;
+}
 
+img {
+	object-fit:scale-down;
 }
