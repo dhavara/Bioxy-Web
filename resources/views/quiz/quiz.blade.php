@@ -70,6 +70,7 @@
                             <input type="hidden" id="point" name="point" value={{ $point }}>
                             <input type="hidden" id="health" name="health" value={{ $health }}>
                             <input type="hidden" id="nomor" name="nomor" value={{ $nomor }}>
+                            <input type="hidden" id="benar" name="benar" value={{ $benar }}>
                         </form>
 
                         <form id="wrong-ans" action="{{ route('check') }}" method="POST" class="d-none">
@@ -78,6 +79,7 @@
                             <input type="hidden" id="point" name="point" value={{ $point }}>
                             <input type="hidden" id="health" name="health" value={{ $health }}>
                             <input type="hidden" id="nomor" name="nomor" value={{ $nomor }}>
+                            <input type="hidden" id="benar" name="benar" value={{ $benar }}>
                         </form>
                     </div>
                 </div>

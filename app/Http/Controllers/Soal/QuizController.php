@@ -31,22 +31,25 @@ class QuizController extends Controller
         $point = 0;
         $health = 5;
         $nomor = 1;
+        $benar = 0;
         if (sizeof($data) > 1) { // dalam request terdapat _token, health (size > 1)
             $health = (int) $data['health'];
             if (sizeof($data) > 2) { // dalam request terdapat _token, point, health, dst (size > 2)
                 $point = (int) $data['point'];
                 $nomor = (int) $data['nomor'];
+                $benar = (int) $data['benar'];
             }
             $random = random_int(0, sizeof(Soal::all())-1);
-            return view('quiz', [
+            return view('quiz.quiz', [
                 "soal" => Soal::all()[$random],
                 "point" => $point,
                 "health" => $health,
-                "nomor" => $nomor
+                "nomor" => $nomor,
+                "benar" => $benar
             ]);
         }
         else { // hanya ngepassing _token
-            return view('choosedifficulty', [
+            return view('quiz.choosedifficulty', [
                 "difficulty" => Difficulty::all()
             ]);
         }
@@ -57,17 +60,19 @@ class QuizController extends Controller
         $point = (int) $data['point'];
         $health = (int) $data['health'];
         $nomor = (int) $data['nomor'] + 1;
+        $benar = (int) $data['benar'];
         if($data['correct']) {
             $point += 10;
+            $benar++;
         } else {
             $health--;
         }
 
         if ($health == 0) {
-            return view('quizresult', [
+            return view('quiz.quizresult', [
                 'point'=>$point,
-                'benar'=>$point/10,
-                'nomor' => $nomor-1
+                'nomor' => $nomor-1,
+                'benar'=>$benar
             ]);
         } else {
             $quiz = new QuizController();
@@ -75,7 +80,8 @@ class QuizController extends Controller
                 '_token'=>$data['_token'],
                 'point'=>$point,
                 'health'=>$health,
-                "nomor" => $nomor
+                "nomor" => $nomor,
+                'benar'=>$benar
             ]);
             return $quiz->show($returnedRequest);
         }
