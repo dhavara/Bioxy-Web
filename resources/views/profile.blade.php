@@ -90,7 +90,7 @@
                 <hr>
                 <hr>
                 <div class="kev col-sm-3">
-                  <h6 class="mb-0">Tanggal Pendaftaran: {{ date_format($user['created_at'], 'd-m-Y') }}</h6>
+                  <h6 class="mb-0">Tanggal daftar: {{ date_format($user['created_at'], 'd-m-Y') }}</h6>
                 </div>
                 <hr>
               </div>
