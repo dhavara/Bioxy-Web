@@ -1,61 +1,102 @@
 @extends('layouts.app')
-
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Profil Pengguna') }}</div>
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+  <div class="container p-5 my-5 bg-dark text-white">
+    <h1>Profile</h1>
+  </div>
 
-                        <div class="container text-center">
-                            <div class="fs-3" @if ($user->detail['user_color'] != "") style="color: {{ $user->detail['user_color'] }}" @endif>
-                                {{ $user['username'] }}
-                            </div>
-                            @if ($user->detail['user_title'] != '')
-                                <div class="fs-5">
-                                    {{ $user->detail['user_title'] }}
-                                </div>
-                            @else
-                                <div class="fs-5">
-                                    Pengguna Biasa
-                                </div>
-                            @endif
-                        </div>
-
-                        <div class="d-flex justify-content-center ms-5 ps-5">
-                            <div>
-                                {{-- <img id="user_img" src="/img/female.jpg" height="150px" width="150px" />
-                                <img id="user_frame" src="@if ($user->detail['user_image'] == '') /img/null.png @else /img/user/{{ $league['user_image'] }} @endif" height="150px" width="150px" /> --}}
-
-                                <img id="user_img" src="@if ($user->detail['user_image'] == '') /img/null.png @else /img/user/{{ $league['user_image'] }} @endif" height="150px" width="150px" />
-                                @if ($user->detail['user_frame'] != "")
-                                    <img id="user_frame" src="/img/frame/{{ $user->detail['user_frame'] }}" height="150px" width="150px" />
-                                @endif
-                            </div>
-                            <div>
-                                <div class="container mt-2">
-                                    <b>Nama Asli:</b> {{ $user['name'] }}<br>
-                                    <b>Alamat Email:</b> {{ $user['email'] }}<br>
-                                    <b>Asal Sekolah:</b> {{ $user['school'] }}<br>
-                                    <b>Asal Kota:</b> {{ $user['city'] }}<br>
-                                    <b>Tanggal Lahir:</b> {{ date('d-m-Y', substr($user['birthdate'], 0, 10)) }}<br>
-                                    <b>Tanggal Pendaftaran:</b> {{ date_format($user['created_at'], 'd-m-Y') }}<br>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <b>Riwayat</b>
-                        <i> di sini menampilkan tabel history (proses pembuatan)</i>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="offcanvas offcanvas-start" id="demo">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title">Bioxy's Story</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
+    <div class="offcanvas-body">
+      <p class="kev">Bioxy.</p>
+    </div>
+  </div>
+
+  <div class="main-body">
+
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="rounded-circle" width="165">
+                  <div class="mt-3">
+                    <h4 class="kev">{{ $user['name'] }}</h4>
+                    @if ($user->detail['user_title'] != '')
+                        <div class="text-muted font-size-sm">
+                            {{ $user->detail['user_title'] }}
+                        </div>
+                    @else
+                        <div class="text-muted font-size-sm">
+                            Pengguna Biasa
+                        </div>
+                    @endif
+                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-3">
+              <ul class="list-group list-group-flush">
+                <h3 class="text">Bioxy Card</h3>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
+                  <span class="text-secondary">Bioxy</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"> Contact us at </h6>
+                  <span class="text-secondary">(0541)-742231</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0">Short Story of Bioxy</h6>
+                  <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    Open Story
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="kev card mb-3">
+              <div class="card-body">
+                  <div class="col-sm-3">
+                    <h6 class="kev mb-0">Nama Lengkap: {{ $user['name'] }}</h6>
+                  </div>
+                <hr>
+                  <div class="col-sm-3">
+                    <h6 class="kev mb-0">Email: {{ $user['email'] }} </h6>
+                  </div>
+                <hr>
+                  <div class="kev col-sm-3">
+                    <h6 class="mb-0">Sekolah: {{ $user['school'] }}</h6>
+                  </div>
+                <hr>
+                  <div class="kev col-sm-3">
+                    <h6 class="mb-0">Kota : {{ $user['city'] }}</h6>
+                  </div>
+                <hr>
+                  <div class="kev col-sm-3">
+                    <h6 class="mb-0">Tanggal lahir: {{ date('d-m-Y', substr($user['birthdate'], 0, 10)) }}</h6>
+                  </div>
+                <hr>
+                <hr>
+                <div class="kev col-sm-3">
+                  <h6 class="mb-0">Tanggal Pendaftaran: {{ date_format($user['created_at'], 'd-m-Y') }}</h6>
+                </div>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 @endsection

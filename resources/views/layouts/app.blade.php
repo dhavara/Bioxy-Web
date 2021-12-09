@@ -21,6 +21,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     
     <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            position: relative; 
+        }
+        .kev{
+          color: black;
+        }
+        h3{
+            color: black;
+        }
+        .text{
+            text-align: center;
+        }
+        </style>
 </head>
 <body>
     <div class="container">
