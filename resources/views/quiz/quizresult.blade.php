@@ -15,7 +15,7 @@
                         @endif
 
                         <div class="container d-flex justify-content-center">
-                            <h1>{{ ceil($benar*100/$nomor) }}%</h1>
+                            <h1>{{ $akurasi }}%</h1>
                         </div>
                         <div class="container d-flex justify-content-center">
                             <h5>Jawaban benar: <b>{{ $benar }}</b> dari <b>{{ $nomor }}</b> soal</h5>

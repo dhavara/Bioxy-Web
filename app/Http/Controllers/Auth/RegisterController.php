@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Log;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -81,6 +83,23 @@ class RegisterController extends Controller
 
         UserDetail::create([
             'user_id' => User::firstWhere('name', $data['name'])['id'],
+        ]);
+
+        $ip = new IpController();
+        Log::create([
+            'table'=>'bio11_users',
+            'creator'=> User::firstWhere('name', $data['name'])['id'], // Auth::user()->id
+            'path' => "RegisterController@create",
+            'desc' => "Create new data in User",
+            'ip' => $ip->getIp()
+        ]);
+
+        Log::create([
+            'table'=>'bio11_users_details',
+            'creator'=> User::firstWhere('name', $data['name'])['id'],
+            'path' => "RegisterController@create",
+            'desc' => "Create new data in User Details",
+            'ip' => $ip->getIp()
         ]);
 
         return $user;

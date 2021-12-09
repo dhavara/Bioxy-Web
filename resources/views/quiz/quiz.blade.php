@@ -66,6 +66,7 @@
 
                         <form id="correct-ans" action="{{ route('check') }}" method="POST" class="d-none">
                             @csrf
+                            <input type="hidden" id="difficulty" name="difficulty" value={{ $difficulty }}>
                             <input type="hidden" id="correct" name="correct" value={{ true }}>
                             <input type="hidden" id="point" name="point" value={{ $point }}>
                             <input type="hidden" id="health" name="health" value={{ $health }}>
@@ -75,6 +76,7 @@
 
                         <form id="wrong-ans" action="{{ route('check') }}" method="POST" class="d-none">
                             @csrf
+                            <input type="hidden" id="difficulty" name="difficulty" value={{ $difficulty }}>
                             <input type="hidden" id="correct" name="correct" value={{ false }}>
                             <input type="hidden" id="point" name="point" value={{ $point }}>
                             <input type="hidden" id="health" name="health" value={{ $health }}>
