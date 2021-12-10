@@ -21,7 +21,11 @@
                             <h5>Jawaban benar: <b>{{ $benar }}</b> dari <b>{{ $nomor }}</b> soal</h5>
                         </div>
                         <div class="container d-flex justify-content-center">
-                            <h5>Skor akhir: <b>{{ $point }}</b>
+                            <h5>Skor akhir: <b>{{ $point }}</b></h5>
+                        </div>
+                        <br>
+                        <div class="container text-muted fs-6">
+                            Selamat! Anda mendapatkan {{ $totalpoint }} poin karena sudah berusaha memainkan kuis ini di level <i>{{ $difficulty }}</i>! Pergunakanlah poin ini di toko kami!
                         </div>
                         <hr>
                         <div class="container d-flex justify-content-center">

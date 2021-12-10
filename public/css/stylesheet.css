@@ -9,16 +9,29 @@
 
 #user_img {
     position:absolute;
-    left: 150px;
+    left: 147.5px;
     z-index:0;
 }
 
 #user_frame {
     position:absolute;
-    left: 150px;
+    left: 147.5px;
     z-index:1;
 }
 
 img {
 	object-fit:scale-down;
+}
+
+body {
+    position: relative; 
+}
+.kev{
+  color: black;
+}
+h3{
+    color: black;
+}
+.text{
+    text-align: center;
 }

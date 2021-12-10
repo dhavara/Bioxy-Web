@@ -24,4 +24,12 @@ class UserHistory extends Model
         'total_correct',
         'total_question'
     ];
+
+    public function history() {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+    public function difficultData() {
+        return $this->belongsTo(Difficulty::class, 'difficulty', 'id');
+    }
+
 }
