@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,8 @@ Route::get('/home', function () {
 
 Auth::routes();
 
+Route::resource('bioxyprof', ProfileController::class);
+
 Route::middleware(['auth'])->group(function(){
     Route::post('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profilePost'])->name('profile');
     Route::get('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profileGet']);
@@ -33,6 +36,6 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'check'])->name('check');
     Route::post('/quiz/start', [App\Http\Controllers\Soal\QuizController::class, 'difficulty'])->name('difficulty');
     Route::get('/quiz/start', [App\Http\Controllers\Soal\QuizController::class, 'difficulty']);
-  
+    
     Route::get('/shop', [App\Http\Controllers\Shop\ShopController::class, 'index'])->name('shop');
 });

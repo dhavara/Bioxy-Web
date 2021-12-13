@@ -29,6 +29,11 @@ class User extends Authenticatable
         'birthdate'
     ];
 
+    public function stores()
+    {
+        return $this->hasMany(Userdata::class, 'profile', 'profile_code');
+    }
+
     public function detail() {
         return $this->hasOne(UserDetail::class, 'user_id', 'id');
     }

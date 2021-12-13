@@ -45,8 +45,7 @@
                                 {{-- <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p> --}}
                                 <hr>
                                 <div class="container d-flex justify-content-center">
-                                    <a class="w-100 btn btn-lg btn-dark" href="{{-- route('editprofile') --}}" onclick="event.preventDefault();
-                                    document.getElementById('edit').submit();">Edit Profile</a>
+                                    <a class="w-100 btn btn-lg btn-dark" href="{{ route('bioxyprof.edit', $profile['profile_code']) }}">Edit Profile</a>
                                 </div>
                                 <form id="edit" action="{{-- route('editprofile') --}}" method="POST" class="d-none">
                                     @csrf
