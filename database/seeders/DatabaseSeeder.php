@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             UserDetailSeeder::class,
             SoalSeeder::class,
-            DifficultySeeder::class
+            DifficultySeeder::class,
+            ItemSeeder::class
         ]);
     }
 }

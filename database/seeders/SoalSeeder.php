@@ -16,7 +16,7 @@ class SoalSeeder extends Seeder
     {
         //
         DB::table('bio11_soals')->insert([
-            'question' => 'Saya ganteng tidak?',
+            'question' => 'Which is true?',
             'answer_correct' => 'Adalah benar',
             'answer_1' => "False",
             'answer_2' => "Tidak",
