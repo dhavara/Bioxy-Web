@@ -21,7 +21,12 @@
                         </div>
 
                         <div class="container d-flex justify-content-center">
-                            <h2>{{ $soal['question'] }}</h2>                                
+                            <div class="fs-4">
+                                @php 
+                                    $s = str_replace("\\n", "", $soal['question']); 
+                                    echo nl2br($s);           
+                                @endphp
+                            </div>               
                         </div>
 
                         @if ($soal['soal_image'] != '')
