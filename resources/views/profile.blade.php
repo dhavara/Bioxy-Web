@@ -26,30 +26,21 @@
 
                                     <img id="user_img" src="@if ($user->detail['user_image'] == '') /img/null.png @else /img/user/{{ $league['user_image'] }} @endif" height="120px" width="120px" />
                                     @if ($user->detail['user_frame'] != '')
-                                        <img id="user_frame" src="/img/frame/{{ $user->detail['user_frame'] }}"
+                                        <img id="user_frame" src="/img/frame/{{ $user->detail->frame['image_path'] }}"
                                             height="120px" width="120px" />
                                     @endif
                                 </div>
-                                <div class="fs-3 pt-4" @if ($user->detail['user_color'] != '') style="color: {{ $user->detail['user_color'] }}" @endif>
+                                <div class="fs-3 pt-4" @if ($user->detail['user_color'] != '') style="color: {{ $user->detail->color['hex_code'] }}" @endif>
                                     {{ $user['username'] }}
                                 </div>
-                                @if ($user->detail['user_title'] != '')
-                                    <div class="text-muted fs-6">
-                                        {{ $user->detail['user_title'] }}
-                                    </div>
-                                @else
-                                    <div class="text-muted fs-6">
-                                        Pengguna Biasa
-                                    </div>
-                                @endif
+                                <div class="text-muted fs-6">
+                                    {{ $user->detail->title['title'] }}
+                                </div>
                                 {{-- <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p> --}}
                                 <hr>
                                 <div class="container d-flex justify-content-center">
-                                    <a class="w-100 btn btn-lg btn-dark" href="{{ route('bioxyprof.edit', $profile['profile_code']) }}">Edit Profile</a>
+                                    <a class="w-100 btn btn-lg btn-dark" href="{{ route('profileEdit') }}">Edit Profile</a>
                                 </div>
-                                <form id="edit" action="{{-- route('editprofile') --}}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -104,28 +95,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($history as $data)
+                                @foreach ($histories as $history)
                                     <tr>
                                         <td>
                                             {{ $loop->iteration }}
                                         </td>
                                         <td>
-                                            {{ $data->difficultData['difficulty'] }}
+                                            {{ $history->difficultData['difficulty'] }}
                                         </td>
                                         <td>
-                                            {{ $data['point'] }}
+                                            {{ $history['point'] }}
                                         </td>
                                         <td>
-                                            {{ $data['accuracy'] }}%
+                                            {{ $history['accuracy'] }}%
                                         </td>
                                         <td>
-                                            {{ $data['total_correct'] }}
+                                            {{ $history['total_correct'] }}
                                         </td>
                                         <td>
-                                            {{ $data['total_question'] }}
+                                            {{ $history['total_question'] }}
                                         </td>
                                         <td>
-                                            {{ date_format($data['created_at']->setTimezone(new DateTimeZone('Asia/Jakarta')), "H:i:s d-m-Y") }}
+                                            {{ date_format($history['created_at']->setTimezone(new DateTimeZone('Asia/Jakarta')), "H:i:s d-m-Y") }}
                                         </td>
                                     </tr>
                                 @endforeach

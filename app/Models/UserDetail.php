@@ -27,6 +27,16 @@ class UserDetail extends Model
     ];
 
     public function user() {
-        return $this->belongsTo(UserDetail::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function color() {
+        return $this->belongsTo(Color::class, 'user_color', 'id');
+    }
+    public function frame() {
+        return $this->belongsTo(Frame::class, 'user_frame', 'id');
+    }
+    public function title() {
+        return $this->belongsTo(Title::class, 'user_title', 'id');
     }
 }

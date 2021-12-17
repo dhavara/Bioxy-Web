@@ -16,26 +16,32 @@ class UserDetailSeeder extends Seeder
     {
         DB::table('bio11_users_details')->insert([
             'user_id' => '1', // Admin
+            'user_title' => '2',
             'created_at' => \Carbon\Carbon::now(),
         ]);
         DB::table('bio11_users_details')->insert([
             'user_id' => '2', // User
+            'user_title' => '1',
             'created_at' => \Carbon\Carbon::now(),
         ]);
         DB::table('bio11_users_details')->insert([
             'user_id' => '3', // User
+            'user_title' => '2',
             'created_at' => \Carbon\Carbon::now(),
         ]);
         DB::table('bio11_users_details')->insert([
             'user_id' => '4', // User
+            'user_title' => '2',
             'created_at' => \Carbon\Carbon::now(),
         ]);
         DB::table('bio11_users_details')->insert([
             'user_id' => '5', // User
+            'user_title' => '2',
             'created_at' => \Carbon\Carbon::now(),
         ]);
         DB::table('bio11_users_details')->insert([
             'user_id' => '6', // User
+            'user_title' => '2',
             'created_at' => \Carbon\Carbon::now(),
         ]);
     }

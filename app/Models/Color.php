@@ -21,4 +21,5 @@ class Color extends Model
         'hex_code',
         'price'
     ];
+    
 }

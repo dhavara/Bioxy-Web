@@ -21,7 +21,7 @@ class Difficulty extends Model
         'health',
     ];
     
-    public function history() {
+    public function histories() {
         return $this->hasMany(UserHistory::class, 'difficulty', 'id');
     }
 }

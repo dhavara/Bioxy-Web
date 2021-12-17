@@ -25,13 +25,14 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-Route::resource('bioxyprof', ProfileController::class);
 
 Route::middleware(['auth'])->group(function(){
     Route::post('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profilePost'])->name('profile');
     Route::get('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profileGet']);
+    // Route::resource('/profile', ProfileController::class);
+    Route::get('/profile/edit', [App\Http\Controllers\Auth\ProfileController::class, 'edit'])->name('profileEdit');
+    Route::post('/profile/edit', [App\Http\Controllers\Auth\ProfileController::class, 'update'])->name('profileUpdate');
 
-    
     Route::get('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'show'])->name('quiz');
     Route::post('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'check'])->name('check');
     Route::post('/quiz/start', [App\Http\Controllers\Soal\QuizController::class, 'difficulty'])->name('difficulty');

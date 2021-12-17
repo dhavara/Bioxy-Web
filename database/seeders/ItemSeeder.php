@@ -33,9 +33,19 @@ class ItemSeeder extends Seeder
         ]);
 
         // Frames
+        // DB::table('bio11_frames')->insert([
+        //     'name' => 'Default',
+        //     'image_path' => '',
+        //     'price' => '0'
+        // ]);
         
 
         //Colors
+        // DB::table('bio11_colors')->insert([
+        //     'name' => 'Default',
+        //     'hex_code' => '',
+        //     'price' => '0'
+        // ]);
         DB::table('bio11_colors')->insert([
             'name' => 'Merah',
             'hex_code' => 'red',
