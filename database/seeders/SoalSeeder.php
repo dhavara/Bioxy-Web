@@ -107,5 +107,14 @@ class SoalSeeder extends Seeder
             'answer_3' => "2, 3 dan 5",
             'answer_4' => "1, 4 dan 5"
         ]);
+
+        DB::table('bio11_soals')->insert([
+            'question' => 'Seorang pasien rumah sakit mengalami suatu penyakit dengan gejala yaitu demam, sesak napas, batuk dahak kental berwarna kuning dan detak jantung yang menjadi cepat. Setelah dilakukan pemeriksaan ditemukan bahwa ada sebuah bakteri yang terdapat di bagian alveolus pasien tersebut. Bakteri tersebut akan menyebabkan alveolus penuh dengan cairan. Struktur dari bakteri tersebut dapat dilihat pada gambar di bawah ini ',
+            'answer_correct' => 'Radang paru-paru',
+            'answer_1' => "Asfiksi",
+            'answer_2' => "Laringitis",
+            'answer_3' => "Asma",
+            'answer_4' => "Emfisema"
+        ]);
     }
 }
