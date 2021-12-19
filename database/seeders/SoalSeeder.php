@@ -116,5 +116,127 @@ class SoalSeeder extends Seeder
             'answer_3' => "Asma",
             'answer_4' => "Emfisema"
         ]);
+
+        //easy
+        DB::table('bio11_soals')->insert([
+            'question' => 'Perhatikan ciri-ciri makhluk hidup berikut ini ! /n
+
+            1. Eukariot /n
+            2. Heterotrof /n
+            3. Pencernaan ekstraseluler /n
+            4. Tidak memiliki klorofil /n
+            5. Dinding sel tersusun atas kitin /n
+
+            Peranan organisme yang memiliki ciri di atas dalam ekosistem adalah.....',
+            'answer_correct' => 'Dekomposer',
+            'answer_1' => "Konsumen",
+            'answer_2' => "Produsen",
+            'answer_3' => "Detritivor",
+            'answer_4' => "herbivor"
+        ]);
+
+        //medium
+        DB::table('bio11_soals')->insert([
+            'question' => 'Kesimpulan yang tepat untuk gamar piramida energi diatas adalah....',
+            'answer_correct' => 'Pada dasar piramid, jumlah individu dan jumlah energi yang terlibat adalah paling besar',
+            'answer_1' => "Ketika puncak piramid dicapai, jumlah individu menurun tapi jumlah energinya meningkat",
+            'answer_2' => "Ketika puncak piramid dicapai, jumlah individu meningkat, dan jumlah energi sama",
+            'answer_3' => "Pada dasar piramid, jumlah individu dan jumlah energi yang terlibat adalah paling rendah",
+            'answer_4' => "Pada semua tingkat, jumlah individu dan jumlah energi yang terlibat adalah sama",
+            "soal_image" => "piramida.jpg"
+        ]);
+
+        //easy
+        DB::table('bio11_soals')->insert([
+            'question' => 'Pencemaran lingkungan dapat ditimbulkan oleh berbagai bahan pencemar, salah satunya adalah penumpukan kotoran dari peternakan. Cara mengatasi bahan pencemar itu sehingga menjadi bermanfaat bagi manusia adalah....',
+            'answer_correct' => 'Menampung dan memprosesnya menjadi biogas',
+            'answer_1' => "Mengeringkan dan memadatkannya sebagai bahan bakar",
+            'answer_2' => "Mengolahnya menjadi makanan ternak",
+            'answer_3' => "Memanfaatkannya untuk industri kertas",
+            'answer_4' => "Memprosesnya sebagai bahan campuran industri kayu lapis"
+        ]);
+
+        //very hard
+        DB::table('bio11_soals')->insert([
+            'question' => 'Perhatikan data hasil pengukuran volume udara pernapasan di bawah ini, pada seorang wanita, usia 20 tahun, posisi duduk, tinggi badan: 150 cm, berat badan: 44 kg, suhu kamar: 25°C. /n
+            Berdasarkan data diatas udara cadangan inspirasi adalah sebanyak...',
+            'answer_correct' => '750 ml',
+            'answer_1' => "625 ml",
+            'answer_2' => "1500 ml",
+            'answer_3' => "3625  ml",
+            'answer_4' => "4625 ml",
+            "soal_image" => "tabelVolume.jpg"
+        ]);
+
+        //medium
+        DB::table('bio11_soals')->insert([
+            'question' => 'Pada sebuah percobaan perkecambahan, biji kacang merah ditanam dalam pot yang berbeda yaitu pot A dan B. Pot A ditanam biji kacang merah dengan pemberian air 10 ml perhari, sedangkan pot B ditanam biji kacang merah dengan pemberian air 25 ml perhari. Setelah didiamkan selama 5 hari kondisi pot A mulai tumbuh kecambah dan pot B tidak tumbuh kecambah. Berdasarkan percobaan di atas dapat disimpulkan bahwa....',
+            'answer_correct' => 'Kadar air yang terlalu banyak pada pot B membuat biji mengalami pembusukan',
+            'answer_1' => "Pemberian air tidak mempengaruhi proses perkecambahan",
+            'answer_2' => "Air yang terlalu banyak tidak akan mempengaruhi proses perkecambahan",
+            'answer_3' => "Laju penguapan tanaman pot A lebih tinggi sehingga kecambah dapat tumbuh",
+            'answer_4' => "Laju penguapan tanaman pot B terlalu rendah sehingga kecambah busuk            "
+        ]);
+
+        //medium
+        DB::table('bio11_soals')->insert([
+            'question' => 'Di bawah ini merupakan beberapa fungsi RNA:
+
+            1. Disintesis dari pola DNA /n
+            2. menerjemahkan kodon mRNA /n
+            3. mengatur urutan asam-asam amino /n
+            4. hasil dari aktivitas transkripsi /n
+            5. membawa kode genetik ke ribosom /n
+            6. mengikat asam-asam amino /n
+            
+            Fungsi dari mRNA adalah....',
+            'answer_correct' => '1, 4, dan 5',
+            'answer_1' => "1, 2, dan 3",
+            'answer_2' => "1, 2, dan 4",
+            'answer_3' => "2, 3, dan 4",
+            'answer_4' => "4, 5, dan 6"
+        ]);
+
+        //hard
+        DB::table('bio11_soals')->insert([
+            'question' => 'Bakteri kemosintesis yang terlibat dalam persamaan reaksi /n
+            Ca(NO2)2 +  O2 → Ca(NO3)2  adalah....',
+            'answer_correct' => 'Nitrobacter',
+            'answer_1' => "Nitrosomonas",
+            'answer_2' => "Aztobacter",
+            'answer_3' => "Acetobacter",
+            'answer_4' => "Nitrococcus"
+        ]);
+
+        //easy
+        DB::table('bio11_soals')->insert([
+            'question' => 'Mikroorganisme yang digunakan dalam proses bioteknologi harus memiliki sifat-sifat tertentu, di antaranya....',
+            'answer_correct' => 'Memiliki produktivitas yang tinggi serta sifat yang mudah dikendalikan',
+            'answer_1' => "Menghasilkan produk yang bersifat alergen",
+            'answer_2' => "Merupakan mikroba patogen yang membahayakan",
+            'answer_3' => "Tidak menghasilkan racun atau toksin sampingan yang berbahaya",
+            'answer_4' => "Memerlukan persyaratan nutrisi yang tidak rumit"
+        ]);
+
+        //medium
+        DB::table('bio11_soals')->insert([
+            'question' => 'Menurut grafik tersebut dapat disimpulkan bahwa....',
+            'answer_correct' => 'Enzim sangat mempengaruhi kecepatan reaksi',
+            'answer_1' => "Jenis enzim akan menentukan arah reaksi",
+            'answer_2' => "Enzim akan meningkatkan jumlah energi suatu reaksi",
+            'answer_3' => "Kualitas substrat akan lebih baik dengan adanya enzim",
+            'answer_4' => "Enzim tidak menentukan arah reaksi",
+            'soal_image' => "grafik.jpg"
+        ]);
+
+        DB::table('bio11_soals')->insert([
+            'question' => 'Urutan fase-fase yang benar dalam proses pembelahan mitosis adalah....',
+            'answer_correct' => ' 5 – 1 – 4 – 2 – 3',
+            'answer_1' => "4 – 5 – 1 – 2 – 3",
+            'answer_2' => "3 – 4 – 2 – 5 – 1",
+            'answer_3' => " 2 – 3 – 5 – 5 – 4",
+            'answer_4' => "1 – 2 – 3 – 4 – 5",
+            'soal_image' => "pembelahan.jpg"
+        ]);
     }
 }
