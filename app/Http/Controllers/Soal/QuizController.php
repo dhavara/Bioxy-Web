@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
+use function PHPUnit\Framework\isEmpty;
+
 class QuizController extends Controller
 {
 
@@ -31,12 +33,35 @@ class QuizController extends Controller
             'health' => $health,
             'difficulty' => Difficulty::where('difficulty', $data['difficulty'])->get()->first()['id']
         ]);
-        return $quiz->show($returnedRequest);
+        return redirect()->back()->with('checkpoint', $returnedRequest);
     }
 
     public function show(Request $request)
     {
-        $data = $request->all();
+        // jika sudah selesai
+        if (session()->has('result')) {
+            $data = session()->all()['result']->all();
+            $quiz = new QuizController();
+            $returnedRequest = new Request([
+                '_token' => $data['_token'],
+                'difficulty' => $data['difficulty'],
+                'point' => $data['point'],
+                'nomor' => $data['nomor'],
+                'benar' => $data['benar'],
+                'akurasi' => $data['akurasi'],
+                'pointDifficulty' => $data['pointDifficulty']
+            ]);
+            return $quiz->result($returnedRequest);
+        }
+        // jika sudah checking jawaban
+        else if (session()->has('checkpoint')) {
+            $data = session()->all()['checkpoint']->all();
+        }
+        // jika belum
+        else {
+            $data = $request->all();
+        }
+
         $point = 0;
         $health = 5;
         $nomor = 1;
@@ -70,6 +95,15 @@ class QuizController extends Controller
     public function check(Request $request)
     {
         $data = $request->all();
+        // cek jika isi dari request dari pilihan difficulty
+        if (sizeof($data) < 5) {
+            $quiz = new QuizController();
+            $returnedRequest = new Request([
+                '_token' => $data['_token'],
+                'difficulty' => $data['difficulty']
+            ]);
+            return $quiz->difficulty($returnedRequest);
+        }
         $point = (int) $data['point'];
         $health = (int) $data['health'];
         $nomor = (int) $data['nomor'] + 1;
@@ -91,7 +125,7 @@ class QuizController extends Controller
                 "nomor" => $nomor,
                 'benar' => $benar
             ]);
-            return $quiz->result($request);
+            return $quiz->submit($request);
         } else {
             $quiz = new QuizController();
             $returnedRequest = new Request([
@@ -102,11 +136,11 @@ class QuizController extends Controller
                 "nomor" => $nomor,
                 'benar' => $benar
             ]);
-            return $quiz->show($returnedRequest);
+            return redirect()->back()->with('checkpoint', $returnedRequest);
         }
     }
 
-    public function result(Request $request)
+    public function submit(Request $request)
     {
         $data = $request->all();
 
@@ -163,6 +197,28 @@ class QuizController extends Controller
             'desc' => "Update user total point in User Detail",
             'ip' => $ip->getIp()
         ]);
+
+        $returnedRequest = new Request([
+            '_token' => $data['_token'],
+            'difficulty' => $difficulty,
+            'point' => $point,
+            'nomor' => $nomor,
+            'benar' => $benar,
+            'akurasi' => $akurasi,
+            'pointDifficulty' => $pointDifficulty
+        ]);
+        return redirect()->back()->with('result', $returnedRequest);
+    }
+
+    public function result(Request $request) {
+        $data = $request->all();
+
+        $point = (int) $data['point'];
+        $nomor = (int) $data['nomor'];
+        $benar = (int) $data['benar'];
+        $difficulty = $data['difficulty'];
+        $akurasi = $data['akurasi'];
+        $pointDifficulty = $data['pointDifficulty'];
 
         return view('quiz.quizresult', [
             'active_quiz' => "active",
