@@ -37,6 +37,18 @@ class User extends Authenticatable
         return $this->hasMany(UserHistory::class, 'user_id', 'id');
     }
 
+    public function titles() {
+        return $this->hasMany(UserTitle::class, 'user_id', 'id');
+    }
+
+    public function frames() {
+        return $this->hasMany(UserFrame::class, 'user_id', 'id');
+    }
+
+    public function colors() {
+        return $this->hasMany(UserColor::class, 'user_id', 'id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

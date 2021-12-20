@@ -44,5 +44,9 @@ class InventorySeeder extends Seeder
         
 
         //Colors
+        DB::table('bio11_users_colors')->insert([
+            'user_id' => '3',
+            'color_id' => '2'
+        ]);
     }
 }

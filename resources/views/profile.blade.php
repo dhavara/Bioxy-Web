@@ -18,13 +18,10 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-center align-items-center text-center">
-                            {{-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="rounded-circle" width="165"> --}}
                             <div class="mt-2">
                                 <div class="pb-5 mb-5">
-                                    {{-- <img id="user_img" src="/img/female.jpg" height="150px" width="150px" />
-                        <img id="user_frame" src="@if ($user->detail['user_image'] == '') /img/null.png @else /img/user/{{ $league['user_image'] }} @endif" height="150px" width="150px" /> --}}
 
-                                    <img id="user_img" src="@if ($user->detail['user_image'] == '') /img/null.png @else /img/user/{{ $league['user_image'] }} @endif" height="120px" width="120px" />
+                                    <img id="user_img" src="@if ($user->detail['user_image'] == '') /img/null.png @else /img/user/{{ $user->detail['user_image'] }} @endif" height="120px" width="120px" />
                                     @if ($user->detail['user_frame'] != '')
                                         <img id="user_frame" src="/img/frame/{{ $user->detail->frame['image_path'] }}"
                                             height="120px" width="120px" />

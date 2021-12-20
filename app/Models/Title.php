@@ -20,4 +20,8 @@ class Title extends Model
         'title',
         'price'
     ];
+
+    public function owners() {
+        return $this->hasMany(UserTitle::class, 'title_id', 'id');
+    }
 }
