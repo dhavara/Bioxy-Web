@@ -2,16 +2,23 @@
 
 @section('content')
 
+@if (session('fail'))
+  <div class="alert alert-danger alert-dismissable custom-danger-box" style="margin: 15px;">
+     <strong> {{ session('fail') }} </strong>
+  </div>
+@endif
+@if (session('success'))
+  <div class="alert alert-success alert-dismissable custom-success-box" style="margin: 15px;">
+     <strong> {{ session('success') }} </strong>
+  </div>
+@endif
+
     <div class="container p-5 my-5 bg-dark text-white">
         <h1>Toko</h1>
     </div>
 
     <div class="container d-flex justify-content-between">
         <h3>Gelar</h3>
-        {{-- <button class="carousel-control-next" type="button" onclick="toggle_visibility('carouselTitle')">
-            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button> --}}
     </div>
     <hr>
     <div id="carouselTitle" class="carousel-fade carousel carousel-dark slide d-flex justify-content-center ps-5 pe-5"
@@ -26,10 +33,18 @@
                         <h5>{{ $title['title'] }}</h5>
                         <p>Harga: {{ $title['price'] }} Poin</p>
                         <hr>
-                        <a class="btn btn-lg btn-dark" href="">Beli</a>
+                        <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                        document.getElementById('{{ $title['title'] }}').submit();">Beli</a>
                     </div>
                 </div>
             </div>
+
+            <form id="{{ $title['title'] }}" action="{{ route('purchase') }}" method="POST" class="d-none">
+                @csrf
+                <input type="hidden" id="type" name="type" value="title">
+                <input type="hidden" id="id" name="id" value="{{ $title['id'] }}">
+            </form>
+
             @endforeach
         </div>
         <button class="carousel-control-prev pe-5" type="button" data-bs-target="#carouselTitle" data-bs-slide="prev">
@@ -60,10 +75,18 @@
                         <img src="img/frame/{{ $frame['image_path'] }}" />
                         <p>Harga: {{ $frame['price'] }} Poin</p>
                         <hr>
-                        <a class="btn btn-lg btn-dark" href="">Beli</a>
+                        <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                        document.getElementById('{{ $frame['name'] }}').submit();">Beli</a>
                     </div>
                 </div>
             </div>
+
+            <form id="{{ $frame['name'] }}" action="{{ route('purchase') }}" method="POST" class="d-none">
+                @csrf
+                <input type="hidden" id="type" name="type" value="frame">
+                <input type="hidden" id="id" name="id" value="{{ $frame['id'] }}">
+            </form>
+
             @endforeach
         </div>
         <button class="carousel-control-prev pe-5" type="button" data-bs-target="#carouselFrame" data-bs-slide="prev">
@@ -94,10 +117,18 @@
                         <h5>{{ $color['name'] }}</h5>
                         <p>Harga: {{ $color['price'] }} Poin</p>
                         <hr>
-                        <a class="btn btn-lg btn-dark" href="">Beli</a>
+                        <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                        document.getElementById('{{ $color['name'] }}').submit();">Beli</a>
                     </div>
                 </div>
             </div>
+
+            <form id="{{ $color['name'] }}" action="{{ route('purchase') }}" method="POST" class="d-none">
+                @csrf
+                <input type="hidden" id="type" name="type" value="color">
+                <input type="hidden" id="id" name="id" value="{{ $color['id'] }}">
+            </form>
+            
             @endforeach
         </div>
         <button class="carousel-control-prev pe-5" type="button" data-bs-target="#carouselColor" data-bs-slide="prev">
@@ -119,7 +150,7 @@
         itemsTitle.forEach((el) => {
             const minPerSlide = 3
             let next = el.nextElementSibling
-            for (var i = 1; i < minPerSlide; i++) {
+            for (var i = 0; i < minPerSlide; i++) {
                 if (!next) {
                     // wrap carousel by using first child
                     next = itemsTitle[0]
@@ -132,7 +163,7 @@
         itemsFrame.forEach((el) => {
             const minPerSlide = 3
             let next = el.nextElementSibling
-            for (var i = 1; i < minPerSlide; i++) {
+            for (var i = 0; i < minPerSlide; i++) {
                 if (!next) {
                     // wrap carousel by using first child
                     next = itemsFrame[0]
@@ -145,7 +176,7 @@
         itemsColor.forEach((el) => {
             const minPerSlide = 3
             let next = el.nextElementSibling
-            for (var i = 1; i < minPerSlide; i++) {
+            for (var i = 0; i < minPerSlide; i++) {
                 if (!next) {
                     // wrap carousel by using first child
                     next = itemsColor[0]

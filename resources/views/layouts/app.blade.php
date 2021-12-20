@@ -41,7 +41,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link {{ $active_quiz ?? '' }}" href="{{ route('quiz') }}">Quiz</a>
+                            <a class="nav-link {{ $active_quiz ?? '' }}" href="{{ route('quiz') }}">Kuis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ $active_shop ?? '' }}" href="{{ route('shop') }}">Toko</a>
                         </li>
                     </ul>
 

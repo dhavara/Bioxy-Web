@@ -77,7 +77,7 @@ class ProfileController extends Controller
             $destinationPath = public_path('/img/user');
             $image->move($destinationPath, $img_name);
         } 
-        else { // jika tidak mengupload gambar
+        else { // jika tidak mengupload gambar dan mengganti nama
             if ($detail->user_image != null) {
                 $extension = strrchr($detail->user_image, '.');
                 $img_name = $request->username . $extension;

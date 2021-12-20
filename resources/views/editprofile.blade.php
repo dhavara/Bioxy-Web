@@ -104,7 +104,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Titel') }}</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Gelar') }}</label>
 
                             <div class="col-md-6">
                                 <select class="form-control selectpicker bg-white" data-live-search="true" id="title" name="title">
@@ -165,7 +165,7 @@
                                         @if ($color['color_id'] == $user->detail['user_color'])
                                             selected="selected"
                                         @endif
-                                        value="{{ $color->item['id'] }}">{{ $color->item['name'] }}
+                                        value="{{ $color->item['id'] }}" style="color: {{ $color->item['hex_code'] }}">{{ $color->item['name'] }}
                                         </option>
                                     @endforeach
                                     @endif

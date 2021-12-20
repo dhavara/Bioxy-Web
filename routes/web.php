@@ -37,4 +37,5 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'check'])->name('check');
     
     Route::get('/shop', [App\Http\Controllers\Shop\ShopController::class, 'index'])->name('shop');
+    Route::post('/shop', [App\Http\Controllers\Shop\ShopController::class, 'purchase'])->name('purchase');
 });

@@ -25,7 +25,15 @@ class InventorySeeder extends Seeder
         ]);
         DB::table('bio11_users_titles')->insert([
             'user_id' => '3',
+            'title_id' => '1'
+        ]);
+        DB::table('bio11_users_titles')->insert([
+            'user_id' => '3',
             'title_id' => '2'
+        ]);
+        DB::table('bio11_users_titles')->insert([
+            'user_id' => '4',
+            'title_id' => '1'
         ]);
         DB::table('bio11_users_titles')->insert([
             'user_id' => '4',
@@ -33,7 +41,15 @@ class InventorySeeder extends Seeder
         ]);
         DB::table('bio11_users_titles')->insert([
             'user_id' => '5',
+            'title_id' => '1'
+        ]);
+        DB::table('bio11_users_titles')->insert([
+            'user_id' => '5',
             'title_id' => '2'
+        ]);
+        DB::table('bio11_users_titles')->insert([
+            'user_id' => '6',
+            'title_id' => '1'
         ]);
         DB::table('bio11_users_titles')->insert([
             'user_id' => '6',

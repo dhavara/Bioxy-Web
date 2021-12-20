@@ -27,7 +27,6 @@ class QuizController extends Controller
 
         $health = Difficulty::where('difficulty', $data['difficulty'])->get()->first()['health'];
 
-        $quiz = new QuizController();
         $returnedRequest = new Request([
             '_token' => $data['_token'],
             'health' => $health,
