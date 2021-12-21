@@ -66,5 +66,10 @@ class ItemSeeder extends Seeder
             'hex_code' => 'green',
             'price' => '1000'
         ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Salmon',
+            'hex_code' => '#FA8072',
+            'price' => '100'
+        ]);
     }
 }

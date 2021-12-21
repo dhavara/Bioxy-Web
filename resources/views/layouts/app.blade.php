@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link {{ $active_shop ?? '' }}" href="{{ route('shop') }}">Toko</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ $active_leaderboard ?? '' }}" href="{{ route('leaderboard') }}">Leaderboard</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -124,7 +127,34 @@
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.js"></script>
     <script>
         $(document).ready(function() {
-            var thetable = $('.table').DataTable({});
+            var thetable = $('.table-profile').DataTable({         
+                "aoColumns": [
+                    { "sWidth": '5%' },
+                    { "sWidth": '30%' },
+                    { "sWidth": '5%' },
+                    { "sWidth": '5%' },
+                    { "sWidth": '5%' },
+                    { "sWidth": '5%' },
+                    { "sWidth": '45%' },
+                ],
+                "bAutoWidth": false,
+            });
+        });
+        $(document).ready(function() {
+            var thetable2 = $('.table-leaderboard').DataTable({
+                lengthMenu: 10,
+                "bLengthChange": false,
+                "bPaginate": false,
+                "info": false,
+                "aaSorting": [[0, "asc"]],         
+                "aoColumns": [
+                    { "bSortable": false, "sWidth": '10%' },
+                    { "bSortable": false, "sWidth": '40%' },
+                    { "bSortable": false, "sWidth": '10%' },
+                    { "bSortable": false, "sWidth": '40%' },
+                ],
+                "bAutoWidth": false,
+            });
         });
     </script>
 </body>

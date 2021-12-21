@@ -18,8 +18,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-center align-items-center text-center">
-                            <div class="mt-2">
-                                <div class="pb-5 mb-5">
+                            <div>
+                                <div>
 
                                     <img id="user_img" src="@if ($user->detail['user_image'] == '') /img/null.png @else /img/user/{{ $user->detail['user_image'] }} @endif" height="120px" width="120px" />
                                     @if ($user->detail['user_frame'] != '')
@@ -27,7 +27,7 @@
                                             height="120px" width="120px" />
                                     @endif
                                 </div>
-                                <div class="fs-3 pt-4" @if ($user->detail['user_color'] != '') style="color: {{ $user->detail->color['hex_code'] }}" @endif>
+                                <div class="fs-3 pt-2" @if ($user->detail['user_color'] != '') style="color: {{ $user->detail->color['hex_code'] }}" @endif>
                                     {{ $user['username'] }}
                                 </div>
                                 <div class="text-muted fs-6">
@@ -35,9 +35,6 @@
                                 </div>
                                 {{-- <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p> --}}
                                 <hr>
-                                <div class="container d-flex justify-content-center">
-                                    <a class="w-100 btn btn-lg btn-dark" href="{{ route('profileEdit') }}">Edit Profile</a>
-                                </div>
                             </div>
                         </div>
                     </div>

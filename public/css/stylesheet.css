@@ -41,4 +41,13 @@ h3{
     border-radius: 50%;
     border: solid black 5px;
     display: inline-block;
-  }
+}
+
+.btn-leaderboard {
+    width:297.5px;
+}
+
+tr, th, td {
+    vertical-align: middle;
+    text-align: center;
+}

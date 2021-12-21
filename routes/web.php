@@ -25,6 +25,9 @@ Route::get('/home', function () {
 
 Auth::routes();
 
+Route::get('/leaderboard', [App\Http\Controllers\LeaderboardController::class, 'index'])->name('leaderboard');
+Route::get('/profile/id={id}', [App\Http\Controllers\Auth\ProfileController::class, 'show']);
+
 
 Route::middleware(['auth'])->group(function(){
     Route::post('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profilePost'])->name('profile');

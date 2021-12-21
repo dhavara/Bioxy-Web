@@ -4,14 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Log;
-use App\Models\Title;
 use App\Models\User;
 use App\Models\UserDetail;
 use App\Models\UserHistory;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
@@ -29,11 +26,18 @@ class ProfileController extends Controller
         return redirect('/profile');
     }
 
-    // public function index()
-    // {
-    //     $profiles = User::all();
-    //     return view('bioxyprof', compact('profiles'));
-    // }
+    public function show(int $id) // saat kita mengetikkan /profile di uri
+    {
+        if ($id == Auth::user()->id) {
+            return redirect('/profile');
+        }
+
+        return view('otherprofile', [
+            "user" => User::findOrFail($id),
+            "detail" => UserDetail::where('user_id', $id)->get()->first(),
+            "histories" => UserHistory::where('user_id', $id)->get()->sortByDesc('point')
+        ]);
+    }
 
     public function edit()
     {
@@ -114,6 +118,6 @@ class ProfileController extends Controller
             'ip' => $ip->getIp()
         ]);
 
-        return redirect('/profile');
+        return redirect('profile')->with('status', 'Anda berhasil mengubah data profil Anda');
     }
 }

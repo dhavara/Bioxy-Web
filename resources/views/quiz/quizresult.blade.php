@@ -29,7 +29,7 @@
                         </div>
                         <hr>
                         <div class="container d-flex justify-content-center">
-                            <a class="w-50 btn btn-lg btn-dark mb-1">Leaderboard</a>
+                            <a class="w-50 btn btn-lg btn-dark mb-1" href="{{ route('leaderboard') }}">Leaderboard</a>
                         </div>
                         <div class="container d-flex justify-content-center">
                             <a class="w-50 btn btn-lg btn-dark mt-1" href="{{ route('quiz') }}">Kembali</a>
