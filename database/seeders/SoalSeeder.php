@@ -119,13 +119,13 @@ class SoalSeeder extends Seeder
 
         //easy
         DB::table('bio11_soals')->insert([
-            'question' => 'Perhatikan ciri-ciri makhluk hidup berikut ini ! /n
+            'question' => 'Perhatikan ciri-ciri makhluk hidup berikut ini ! \n
 
-            1. Eukariot /n
-            2. Heterotrof /n
-            3. Pencernaan ekstraseluler /n
-            4. Tidak memiliki klorofil /n
-            5. Dinding sel tersusun atas kitin /n
+            1. Eukariot \n
+            2. Heterotrof \n
+            3. Pencernaan ekstraseluler \n
+            4. Tidak memiliki klorofil \n
+            5. Dinding sel tersusun atas kitin \n
 
             Peranan organisme yang memiliki ciri di atas dalam ekosistem adalah.....',
             'answer_correct' => 'Dekomposer',
@@ -158,7 +158,7 @@ class SoalSeeder extends Seeder
 
         //very hard
         DB::table('bio11_soals')->insert([
-            'question' => 'Perhatikan data hasil pengukuran volume udara pernapasan di bawah ini, pada seorang wanita, usia 20 tahun, posisi duduk, tinggi badan: 150 cm, berat badan: 44 kg, suhu kamar: 25°C. /n
+            'question' => 'Perhatikan data hasil pengukuran volume udara pernapasan di bawah ini, pada seorang wanita, usia 20 tahun, posisi duduk, tinggi badan: 150 cm, berat badan: 44 kg, suhu kamar: 25°C. \n
             Berdasarkan data diatas udara cadangan inspirasi adalah sebanyak...',
             'answer_correct' => '750 ml',
             'answer_1' => "625 ml",
@@ -182,12 +182,12 @@ class SoalSeeder extends Seeder
         DB::table('bio11_soals')->insert([
             'question' => 'Di bawah ini merupakan beberapa fungsi RNA:
 
-            1. Disintesis dari pola DNA /n
-            2. menerjemahkan kodon mRNA /n
-            3. mengatur urutan asam-asam amino /n
-            4. hasil dari aktivitas transkripsi /n
-            5. membawa kode genetik ke ribosom /n
-            6. mengikat asam-asam amino /n
+            1. Disintesis dari pola DNA \n
+            2. menerjemahkan kodon mRNA \n
+            3. mengatur urutan asam-asam amino \n
+            4. hasil dari aktivitas transkripsi \n
+            5. membawa kode genetik ke ribosom \n
+            6. mengikat asam-asam amino \n
             
             Fungsi dari mRNA adalah....',
             'answer_correct' => '1, 4, dan 5',
@@ -199,7 +199,7 @@ class SoalSeeder extends Seeder
 
         //hard
         DB::table('bio11_soals')->insert([
-            'question' => 'Bakteri kemosintesis yang terlibat dalam persamaan reaksi /n
+            'question' => 'Bakteri kemosintesis yang terlibat dalam persamaan reaksi \n
             Ca(NO2)2 +  O2 → Ca(NO3)2  adalah....',
             'answer_correct' => 'Nitrobacter',
             'answer_1' => "Nitrosomonas",
