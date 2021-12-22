@@ -14,16 +14,6 @@ class SoalSeeder extends Seeder
      */
     public function run()
     {
-        //
-        DB::table('bio11_soals')->insert([
-            'question' => 'Which is true?',
-            'answer_correct' => 'Adalah benar',
-            'answer_1' => "False",
-            'answer_2' => "Tidak",
-            'answer_3' => "Gak",
-            'answer_4' => "No"
-        ]);
-
         //easy
         DB::table('bio11_soals')->insert([
             'question' => 'Tingkat keanekaragaman hayati yang ditunjukkan oleh gambar di atas adalah ….',
@@ -34,6 +24,10 @@ class SoalSeeder extends Seeder
             'answer_4' => "Spesies",
             'soal_image' => "gen.jpg"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '1',
+            'difficulty_id' => '1',
+        ]);
 
         //medium
         DB::table('bio11_soals')->insert([
@@ -43,6 +37,10 @@ class SoalSeeder extends Seeder
             'answer_2' => "genus sama, famili berbeda",
             'answer_3' => "genus berbeda, famili sama",
             'answer_4' => "spesies sama, genus dan famili berbeda"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '2',
+            'difficulty_id' => '2',
         ]);
 
         //hard
@@ -59,6 +57,10 @@ class SoalSeeder extends Seeder
             'answer_3' => "3 - 1 - 4 - 2 - 5",
             'answer_4' => "3 - 4 - 1 - 2 - 5"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '3',
+            'difficulty_id' => '3',
+        ]);
 
         //very hard
         DB::table('bio11_soals')->insert([
@@ -69,6 +71,10 @@ class SoalSeeder extends Seeder
             'answer_3' => "15.000 gram",
             'answer_4' => "1,5 gram",
             'soal_image' => "biomassa.jpg"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '4',
+            'difficulty_id' => '4',
         ]);
 
         //hard
@@ -87,6 +93,10 @@ class SoalSeeder extends Seeder
             'answer_2' => "2, 4, dan 5",
             'answer_3' => "3, 4, dan 5",
             'answer_4' => "2, 3, dan 4"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '5',
+            'difficulty_id' => '3',
         ]);
 
         //medium
@@ -107,7 +117,12 @@ class SoalSeeder extends Seeder
             'answer_3' => "2, 3 dan 5",
             'answer_4' => "1, 4 dan 5"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '6',
+            'difficulty_id' => '2',
+        ]);
 
+        //medium
         DB::table('bio11_soals')->insert([
             'question' => 'Seorang pasien rumah sakit mengalami suatu penyakit dengan gejala yaitu demam, sesak napas, batuk dahak kental berwarna kuning dan detak jantung yang menjadi cepat. Setelah dilakukan pemeriksaan ditemukan bahwa ada sebuah bakteri yang terdapat di bagian alveolus pasien tersebut. Bakteri tersebut akan menyebabkan alveolus penuh dengan cairan. Struktur dari bakteri tersebut dapat dilihat pada gambar di bawah ini ',
             'answer_correct' => 'Radang paru-paru',
@@ -115,6 +130,10 @@ class SoalSeeder extends Seeder
             'answer_2' => "Laringitis",
             'answer_3' => "Asma",
             'answer_4' => "Emfisema"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '7',
+            'difficulty_id' => '2',
         ]);
 
         //easy
@@ -134,6 +153,10 @@ class SoalSeeder extends Seeder
             'answer_3' => "Detritivor",
             'answer_4' => "herbivor"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '8',
+            'difficulty_id' => '1',
+        ]);
 
         //medium
         DB::table('bio11_soals')->insert([
@@ -145,6 +168,10 @@ class SoalSeeder extends Seeder
             'answer_4' => "Pada semua tingkat, jumlah individu dan jumlah energi yang terlibat adalah sama",
             "soal_image" => "piramida.jpg"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '9',
+            'difficulty_id' => '2',
+        ]);
 
         //easy
         DB::table('bio11_soals')->insert([
@@ -154,6 +181,10 @@ class SoalSeeder extends Seeder
             'answer_2' => "Mengolahnya menjadi makanan ternak",
             'answer_3' => "Memanfaatkannya untuk industri kertas",
             'answer_4' => "Memprosesnya sebagai bahan campuran industri kayu lapis"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '10',
+            'difficulty_id' => '1',
         ]);
 
         //very hard
@@ -167,6 +198,10 @@ class SoalSeeder extends Seeder
             'answer_4' => "4625 ml",
             "soal_image" => "tabelVolume.jpg"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '11',
+            'difficulty_id' => '4',
+        ]);
 
         //medium
         DB::table('bio11_soals')->insert([
@@ -176,6 +211,10 @@ class SoalSeeder extends Seeder
             'answer_2' => "Air yang terlalu banyak tidak akan mempengaruhi proses perkecambahan",
             'answer_3' => "Laju penguapan tanaman pot A lebih tinggi sehingga kecambah dapat tumbuh",
             'answer_4' => "Laju penguapan tanaman pot B terlalu rendah sehingga kecambah busuk            "
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '12',
+            'difficulty_id' => '2',
         ]);
 
         //medium
@@ -196,6 +235,10 @@ class SoalSeeder extends Seeder
             'answer_3' => "2, 3, dan 4",
             'answer_4' => "4, 5, dan 6"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '13',
+            'difficulty_id' => '2',
+        ]);
 
         //hard
         DB::table('bio11_soals')->insert([
@@ -207,6 +250,10 @@ class SoalSeeder extends Seeder
             'answer_3' => "Acetobacter",
             'answer_4' => "Nitrococcus"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '14',
+            'difficulty_id' => '2',
+        ]);
 
         //easy
         DB::table('bio11_soals')->insert([
@@ -216,6 +263,10 @@ class SoalSeeder extends Seeder
             'answer_2' => "Merupakan mikroba patogen yang membahayakan",
             'answer_3' => "Tidak menghasilkan racun atau toksin sampingan yang berbahaya",
             'answer_4' => "Memerlukan persyaratan nutrisi yang tidak rumit"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '15',
+            'difficulty_id' => '1',
         ]);
 
         //medium
@@ -228,15 +279,24 @@ class SoalSeeder extends Seeder
             'answer_4' => "Enzim tidak menentukan arah reaksi",
             'soal_image' => "grafik.jpg"
         ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '16',
+            'difficulty_id' => '2',
+        ]);
 
+        // medium
         DB::table('bio11_soals')->insert([
             'question' => 'Urutan fase-fase yang benar dalam proses pembelahan mitosis adalah....',
-            'answer_correct' => ' 5 – 1 – 4 – 2 – 3',
-            'answer_1' => "4 – 5 – 1 – 2 – 3",
-            'answer_2' => "3 – 4 – 2 – 5 – 1",
-            'answer_3' => " 2 – 3 – 5 – 5 – 4",
-            'answer_4' => "1 – 2 – 3 – 4 – 5",
+            'answer_correct' => ' 5 - 1 - 4 - 2 - 3',
+            'answer_1' => "4 - 5 - 1 - 2 - 3",
+            'answer_2' => "3 - 4 - 2 - 5 - 1",
+            'answer_3' => " 2 - 3 - 5 - 5 - 4",
+            'answer_4' => "1 - 2 - 3 - 4 - 5",
             'soal_image' => "pembelahan.jpg"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '17',
+            'difficulty_id' => '2',
         ]);
     }
 }

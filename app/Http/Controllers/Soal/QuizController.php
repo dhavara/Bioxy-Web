@@ -73,10 +73,9 @@ class QuizController extends Controller
                 $nomor = (int) $data['nomor'];
                 $benar = (int) $data['benar'];
             }
-            $random = random_int(0, sizeof(Soal::all()) - 1);
             return view('quiz.quiz', [
                 'active_quiz' => "active",
-                "soal" => Soal::all()[$random],
+                "soal" => Difficulty::where('id', $difficulty)->get()->first()->soals()->get()->random(1)->first()->soal()->get()->first(),
                 "difficulty" => $difficulty,
                 "point" => $point,
                 "health" => $health,

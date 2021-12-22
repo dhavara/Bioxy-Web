@@ -24,4 +24,8 @@ class Difficulty extends Model
     public function histories() {
         return $this->hasMany(UserHistory::class, 'difficulty', 'id');
     }
+    
+    public function soals() {
+        return $this->hasMany(SoalDifficulty::class, 'difficulty_id', 'id');
+    }
 }

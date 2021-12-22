@@ -25,4 +25,8 @@ class Soal extends Model
         'answer_3',
         'answer_4'
     ];
+    
+    public function difficulties() {
+        return $this->hasMany(SoalDifficulty::class, 'soal_id', 'id');
+    }
 }
