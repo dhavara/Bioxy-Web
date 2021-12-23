@@ -72,7 +72,7 @@
                 <div class="card w-50 me-1 ms-1">
                     <div class="card-body text-center">
                         <h5>{{ $frame['name'] }}</h5>
-                        <img src="img/frame/{{ $frame['image_path'] }}" />
+                        <img src="img/frame/{{ $frame['image_path'] }}" height="150px" width="150px" />
                         <p>Harga: {{ $frame['price'] }} Poin</p>
                         <hr>
                         <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
@@ -150,7 +150,7 @@
         itemsTitle.forEach((el) => {
             const minPerSlide = 3
             let next = el.nextElementSibling
-            for (var i = 0; i < minPerSlide; i++) {
+            for (var i = 0; i < minPerSlide+1; i++) {
                 if (!next) {
                     // wrap carousel by using first child
                     next = itemsTitle[0]
@@ -163,7 +163,7 @@
         itemsFrame.forEach((el) => {
             const minPerSlide = 3
             let next = el.nextElementSibling
-            for (var i = 0; i < minPerSlide; i++) {
+            for (var i = 0; i < minPerSlide+1; i++) {
                 if (!next) {
                     // wrap carousel by using first child
                     next = itemsFrame[0]
@@ -176,7 +176,7 @@
         itemsColor.forEach((el) => {
             const minPerSlide = 3
             let next = el.nextElementSibling
-            for (var i = 0; i < minPerSlide; i++) {
+            for (var i = 0; i < minPerSlide+1; i++) {
                 if (!next) {
                     // wrap carousel by using first child
                     next = itemsColor[0]
@@ -186,15 +186,6 @@
                 next = next.nextElementSibling
             }
         })
-    </script>
-    <script type="text/javascript">
-      function toggle_visibility(id) {
-            var e = document.getElementById(id);
-            if (e.style.display == 'block')
-                e.style.display = 'none';
-            else
-                e.style.display = 'block';
-        }
     </script>
 
 @endsection

@@ -27,11 +27,13 @@ class UserDetailSeeder extends Seeder
         DB::table('bio11_users_details')->insert([
             'user_id' => '3', // User
             'user_title' => '2',
+            'user_color' => '1',
             'created_at' => \Carbon\Carbon::now(),
         ]);
         DB::table('bio11_users_details')->insert([
             'user_id' => '4', // User
             'user_title' => '2',
+            'user_color' => '2',
             'created_at' => \Carbon\Carbon::now(),
         ]);
         DB::table('bio11_users_details')->insert([
