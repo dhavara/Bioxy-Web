@@ -14,6 +14,7 @@ class SoalSeeder extends Seeder
      */
     public function run()
     {
+        //untuk difficulty_id itu 1 = easy, 2 = medium, 3 = hard, 4 = very hard
         //
         DB::table('bio11_soals')->insert([
             'question' => 'Which is true?',
