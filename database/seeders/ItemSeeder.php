@@ -67,9 +67,29 @@ class ItemSeeder extends Seeder
             'price' => '1000'
         ]);
         DB::table('bio11_colors')->insert([
+            'name' => 'Hijau Neon',
+            'hex_code' => '#39FF14',
+            'price' => '2000'
+        ]);
+        DB::table('bio11_colors')->insert([
             'name' => 'Salmon',
             'hex_code' => '#FA8072',
             'price' => '100'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Magenta',
+            'hex_code' => '#FF00FF',
+            'price' => '2000'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Gold',
+            'hex_code' => '#FFD700',
+            'price' => '1500'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Lime',
+            'hex_code' => '#BFFF00',
+            'price' => '1500'
         ]);
     }
 }
