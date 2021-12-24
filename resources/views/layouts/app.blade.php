@@ -22,7 +22,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     
     <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-    
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
     referrerpolicy="no-referrer" /></head>
 </head>
@@ -125,6 +128,9 @@
     {{-- DataTables --}}
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
     <script>
         $(document).ready(function() {
             var thetable = $('.table-profile').DataTable({         
@@ -154,6 +160,17 @@
                     { "bSortable": false, "sWidth": '40%' },
                 ],
                 "bAutoWidth": false,
+            });
+        });
+        $(document).ready(function(){
+            $('.slider').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                arrows: true,
+                dots: true,
+                prevArrow: '<span class="slick-prev" aria-hidden="true"></span>',
+                nextArrow: '<span class="slick-next" aria-hidden="true"></span>',
             });
         });
     </script>

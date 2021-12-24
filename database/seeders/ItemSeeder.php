@@ -77,6 +77,11 @@ class ItemSeeder extends Seeder
             'image_path' => 'bingkai_dasar_kuning.png',
             'price' => '1000'
         ]);
+        DB::table('bio11_frames')->insert([
+            'name' => 'Bingkai Hijau',
+            'image_path' => 'bingkai_dasar_hijau.png',
+            'price' => '1000'
+        ]);
         
 
         //Colors

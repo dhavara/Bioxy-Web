@@ -51,3 +51,15 @@ tr, th, td {
     vertical-align: middle;
     text-align: center;
 }
+
+.slider {
+    width: 90%;
+    margin:auto;
+}
+
+.slick-prev, .slick-prev:focus, .slick-next, .slick-prev:focus {
+    font-family:initial!important;
+    position: absolute;
+    filter: invert(100%);
+}
+

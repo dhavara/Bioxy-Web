@@ -20,8 +20,29 @@
     <div class="container d-flex justify-content-between">
         <h3>Gelar</h3>
     </div>
+    <div class="slider">
+        @foreach ($titles as $title)
+        <div class="d-flex justify-content-center">
+            <div class="card me-1 ms-1 w-100">
+                <div class="card-body text-center">
+                    <h5>{{ $title['title'] }}</h5>
+                    <p>Harga: {{ $title['price'] }} Poin</p>
+                    <hr>
+                    <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                    document.getElementById('{{ $title['title'] }}').submit();">Beli</a>
+                </div>
+                <form id="{{ $title['title'] }}" action="{{ route('purchase') }}" method="POST" class="d-none">
+                    @csrf
+                    <input type="hidden" id="type" name="type" value="title">
+                    <input type="hidden" id="id" name="id" value="{{ $title['id'] }}">
+                </form>
+            </div>
+        </div>
+        @endforeach
+    </div>
     <hr>
-    <div id="carouselTitle" class="carousel-fade carousel carousel-dark slide d-flex justify-content-center ps-5 pe-5"
+
+    {{-- <div id="carouselTitle" class="carousel-fade carousel carousel-dark slide d-flex justify-content-center ps-5 pe-5"
         data-bs-interval="false">
         @if (sizeof($titles) > 0)
         
@@ -56,14 +77,38 @@
             <span class="visually-hidden">Next</span>
         </button>
         @endif
-    </div>
+    </div> --}}
     <br>
 
     <div class="container">
         <h3>Bingkai</h3>
     </div>
+    <div class="slider">
+        @foreach ($frames as $frame)
+        <div class="d-flex justify-content-center">
+            <div class="card me-1 ms-1 w-100">
+                <div class="card-body text-center">
+                    <h5>{{ $frame['name'] }}</h5>
+                    <div class="d-flex justify-content-center">
+                        <img src="img/frame/{{ $frame['image_path'] }}" height="150px" width="150px" />
+                    </div>
+                    <p>Harga: {{ $frame['price'] }} Poin</p>
+                    <hr>
+                    <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                    document.getElementById('{{ $frame['name'] }}').submit();">Beli</a>
+                </div>
+                <form id="{{ $frame['name'] }}" action="{{ route('purchase') }}" method="POST" class="d-none">
+                    @csrf
+                    <input type="hidden" id="type" name="type" value="frame">
+                    <input type="hidden" id="id" name="id" value="{{ $frame['id'] }}">
+                </form>
+            </div>
+        </div>
+        @endforeach
+    </div>
     <hr>
-    <div id="carouselFrame" class="carousel-fade carousel carousel-dark slide d-flex justify-content-center ps-5 pe-5"
+
+    {{-- <div id="carouselFrame" class="carousel-fade carousel carousel-dark slide d-flex justify-content-center ps-5 pe-5"
         data-bs-interval="false">
         @if (sizeof($frames) > 0)
         <div class="carousel-frame carousel-inner ms-5 me-5">
@@ -98,14 +143,36 @@
             <span class="visually-hidden">Next</span>
         </button>
         @endif
-    </div>
+    </div> --}}
     <br>
 
     <div class="container">
         <h3>Warna Username</h3>
     </div>
+    <div class="slider">
+        @foreach ($colors as $color)
+        <div class="d-flex justify-content-center">
+            <div class="card me-1 ms-1 w-100">
+                <div class="card-body text-center">
+                    <span class="color-dot" style="background-color: {{ $color['hex_code'] }}"></span>
+                    <h5>{{ $color['name'] }}</h5>
+                    <p>Harga: {{ $color['price'] }} Poin</p>
+                    <hr>
+                    <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                    document.getElementById('{{ $color['name'] }}').submit();">Beli</a>
+                </div>
+                <form id="{{ $color['name'] }}" action="{{ route('purchase') }}" method="POST" class="d-none">
+                    @csrf
+                    <input type="hidden" id="type" name="type" value="color">
+                    <input type="hidden" id="id" name="id" value="{{ $color['id'] }}">
+                </form>
+            </div>
+        </div>
+        @endforeach
+    </div>
     <hr>
-    <div id="carouselColor" class="carousel-fade carousel carousel-dark slide d-flex justify-content-center ps-5 pe-5"
+
+    {{-- <div id="carouselColor" class="carousel-fade carousel carousel-dark slide d-flex justify-content-center ps-5 pe-5"
         data-bs-interval="false">
         @if (sizeof($colors) > 0)
         <div class="carousel-color carousel-inner ms-5 me-5">
@@ -182,10 +249,10 @@
                     next = itemsColor[0]
                 }
                 let cloneChild = next.cloneNode(true)
-                el.appendChild(cloneChild.children[0])
+                next.appendChild(cloneChild.children[0])
                 next = next.nextElementSibling
             }
         })
-    </script>
+    </script> --}}
 
 @endsection
