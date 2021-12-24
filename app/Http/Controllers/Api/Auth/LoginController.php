@@ -14,33 +14,25 @@ use Laravel\Passport\Client;
 class LoginController extends Controller
 {
     //
-    private $client;
-
-    public function __construct()
-    {
-        $this->client = Client::find(2);
-    }
 
     public function login(Request $request) {
+        $client = DB::table('oauth_clients')->where('password_client', 1)->get()->first();
+
         $user = [
-            'email' => $request->email,
+            'username' => $request->username,
             'password' => $request->password,
-            'role' => 'admin',
-            'is_login' => '0',
-            'is_active' => '1'
         ];
-        $check = DB::table('users')->where('email', $request->email)->first();
+        $check = User::where('username', $request->username)->get()->first();
 
-        if($check->is_active == '1') {
-            if($check->is_login == '0') {
+        if($check->detail['is_active'] == '1') {
+            if($check->detail['is_login'] == '0') {
                 if(Auth::attempt($user)) {
-                    $this->isLogin(Auth::id());
-
+                    // $this->isLogin(Auth::id());
                     $response = Http::asForm()->post('http://bioxy.nonah/oauth/token', [
                         'grant_type' => 'password',
-                        'client_id' => $this->client->id,
-                        'client_secret' => $this->client->secret,
-                        'username' => $request->email,
+                        'client_id' => $client->id /*'9530b116-04ad-4b7c-99b8-0b8f6723b5fd'*/,
+                        'client_secret' => $client->secret /*'qbgwZKhzipAtol3rOBYKat5qo1BldVIkdcEH37a2'*/,
+                        'username' => $request->username,
                         'password' => $request->password,
                         'scope' => '*',
                     ]);
@@ -69,12 +61,14 @@ class LoginController extends Controller
     }
     private function isLogin(int $id) {
         $user = User::findOrFail($id);
-        return $user->update([
+        return $user->detail()->update([
             'is_login' => '1'
         ]);
     }
 
     public function refresh(Request $request) {
+        $client = DB::table('oauth_clients')->where('password_client', 1)->get()->first();
+        
         $this->validate($request, [
             'refresh_token' => 'required',
         ], [
@@ -84,8 +78,8 @@ class LoginController extends Controller
         $response = Http::asForm()->post('http://bioxy.nonah/oauth/token', [
             'grant_type' => 'refresh_token',
             'refresh_token' => $request->refresh_token,
-            'client_id' => $this->client->id,
-            'client_secret' => $this->client->secret,
+            'client_id' => $client->id,
+            'client_secret' => $client->secret,
             'scope' => '*',
         ]);
         
@@ -95,10 +89,10 @@ class LoginController extends Controller
     public function logout() {
         /** @var \App\Models\User $user */
         $user = Auth::user();
-        $accessToken = Auth::user()->token();
+        $accessToken = Auth::user()->token()->where('revoked', false)->get()->first();
         DB::table('oauth_refresh_tokens')->where('access_token_id', $accessToken->id)->update(['revoked'=>true]);
 
-        $user->update([
+        $user->detail()->update([
             'is_login' => '0'
         ]);
         $accessToken->revoke();

@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\Bridge\AccessToken;
+use Laravel\Passport\Token;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -49,6 +51,10 @@ class User extends Authenticatable
         return $this->hasMany(UserColor::class, 'user_id', 'id');
     }
 
+    public function token() {
+        return $this->hasMany(Token::class, 'user_id', 'id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -67,4 +73,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function findForPassport($username) {
+        return self::where('username', $username)->first(); // change column name whatever you use in credentials
+     }
 }
