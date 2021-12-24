@@ -21,6 +21,7 @@
 
 img {
 	object-fit:scale-down;
+    pointer-events: none;
 }
 
 body {

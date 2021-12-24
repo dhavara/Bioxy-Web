@@ -52,8 +52,24 @@ class ItemSeeder extends Seeder
             'price' => '1000'
         ]);
         DB::table('bio11_titles')->insert([
-            'title' => 'Si Dewa',
+            'title' => 'Dewa Biologi',
             'price' => '10000'
+        ]);
+        DB::table('bio11_titles')->insert([
+            'title' => 'Albert Einstein Jr.',
+            'price' => '5000'
+        ]);
+        DB::table('bio11_titles')->insert([
+            'title' => 'Titisan Charles Darwin',
+            'price' => '5000'
+        ]);
+        DB::table('bio11_titles')->insert([
+            'title' => 'Cucu Carolus Linnaeus',
+            'price' => '5000'
+        ]);
+        DB::table('bio11_titles')->insert([
+            'title' => 'Keturunan Gregor Mendel',
+            'price' => '5000'
         ]);
 
         // Frames
@@ -81,6 +97,26 @@ class ItemSeeder extends Seeder
             'name' => 'Bingkai Hijau',
             'image_path' => 'bingkai_dasar_hijau.png',
             'price' => '1000'
+        ]);
+        DB::table('bio11_frames')->insert([
+            'name' => 'Emas Mewah',
+            'image_path' => 'emas_mewah.png',
+            'price' => '2000'
+        ]);
+        DB::table('bio11_frames')->insert([
+            'name' => 'Windows XP Paint',
+            'image_path' => 'paint_winxp.png',
+            'price' => '1500'
+        ]);
+        DB::table('bio11_frames')->insert([
+            'name' => 'Batu Bata',
+            'image_path' => 'batu_bata.png',
+            'price' => '1500'
+        ]);
+        DB::table('bio11_frames')->insert([
+            'name' => 'Bingkai Foto',
+            'image_path' => 'bingkai_foto.png',
+            'price' => '1500'
         ]);
         
 
@@ -121,9 +157,19 @@ class ItemSeeder extends Seeder
             'price' => '1000'
         ]);
         DB::table('bio11_colors')->insert([
+            'name' => 'Jingga',
+            'hex_code' => 'orange',
+            'price' => '1000'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Merah Muda',
+            'hex_code' => 'pink',
+            'price' => '1000'
+        ]);
+        DB::table('bio11_colors')->insert([
             'name' => 'Salmon',
             'hex_code' => '#FA8072',
-            'price' => '100'
+            'price' => '1500'
         ]);
         DB::table('bio11_colors')->insert([
             'name' => 'Hijau Neon',
@@ -132,17 +178,42 @@ class ItemSeeder extends Seeder
         ]);
         DB::table('bio11_colors')->insert([
             'name' => 'Magenta',
-            'hex_code' => '#FF00FF',
+            'hex_code' => 'magenta',
+            'price' => '2000'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Cyan',
+            'hex_code' => 'cyan',
             'price' => '2000'
         ]);
         DB::table('bio11_colors')->insert([
             'name' => 'Gold',
             'hex_code' => '#FFD700',
-            'price' => '1500'
+            'price' => '2000'
         ]);
         DB::table('bio11_colors')->insert([
             'name' => 'Lime',
             'hex_code' => '#BFFF00',
+            'price' => '1500'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Maroon',
+            'hex_code' => '#800000',
+            'price' => '1500'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Lavender',
+            'hex_code' => '#E6E6FA',
+            'price' => '1500'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Turquoise',
+            'hex_code' => '#30D5C8',
+            'price' => '1500'
+        ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Permen Mint',
+            'hex_code' => '#AAF0D1',
             'price' => '1500'
         ]);
     }

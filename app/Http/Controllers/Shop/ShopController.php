@@ -22,9 +22,9 @@ class ShopController extends Controller
     public function index() {
         return view('shop.shop', [
             'active_shop' => "active",
-            'titles' => Title::where('price', '>', 0)->get(),
-            'frames' => Frame::where('price', '>', 0)->get(),
-            'colors' => Color::where('price', '>', 0)->get()
+            'titles' => Title::where('price', '>', 0)->get()->sortBy('price'),
+            'frames' => Frame::where('price', '>', 0)->get()->sortBy('price'),
+            'colors' => Color::where('price', '>', 0)->get()->sortBy('price')
         ]);
     }
 
