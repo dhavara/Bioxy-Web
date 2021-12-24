@@ -51,6 +51,10 @@ class ItemSeeder extends Seeder
             'title' => 'Si Terampil',
             'price' => '1000'
         ]);
+        DB::table('bio11_titles')->insert([
+            'title' => 'Si Dewa',
+            'price' => '10000'
+        ]);
 
         // Frames
         DB::table('bio11_frames')->insert([

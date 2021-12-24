@@ -298,5 +298,124 @@ class SoalSeeder extends Seeder
             'soal_id' => '17',
             'difficulty_id' => '2',
         ]);
+
+        //easy
+        DB::table('bio11_soals')->insert([
+            'question' => 'Pada usia 5 hari, berat buah semangka adalah 5 kg. Pada usia 10 hari, berat semangka menjadi 15 kg. Namun pada usia 15 hari, berat semangka tetap 15 kg. Penafsiran dari data perkembangan tersebut adalah…',
+            'answer_correct' => 'setelah usia 5 hari, berat buah terus bertambah dengan rata- rata pertambahan 2 kg/hari',
+            'answer_1' => "pada usia 15 hari tercapai berat tertinggi",
+            'answer_2' => "semakin bertambah usia, berat buah semakin bertambah pula",
+            'answer_3' => "energi dapat tertimbun dalam bentuk jaringan tubuh",
+            'answer_4' => "semakin bertambah berat buah, semakin bertambah pula usianya"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '18',
+            'difficulty_id' => '1',
+        ]);
+
+        // medium
+        DB::table('bio11_soals')->insert([
+            'question' => 'Perhatikan gambar di bawah ini!',
+            'answer_correct' => 'berperan sebagai reseptor suara',
+            'answer_1' => "meneruskan getaran ke jendela oval",
+            'answer_2' => "meneruskan getaran ke osikula",
+            'answer_3' => "berperan sebagai reseptor gravitasi",
+            'answer_4' => "menjaga keseimbangan udara",
+            'soal_image' => "telinga.jpg"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '19',
+            'difficulty_id' => '2',
+        ]);
+
+         // medium
+         DB::table('bio11_soals')->insert([
+            'question' => 'Perhatikan gambar nefron di bawah ini! \n
+
+            Hubungan yang tepat antara bagian yang ditunjuk oleh nomor 1, proses yang terjadi, dan hasilnya adalah...',
+            'answer_correct' => 'Tubulus kontortus distal sebagai augmentasi menghasilkan urin sesungguhnya',
+            'answer_1' => "Tubulus kontortus proksimal sebagai filtrasi menghasilkan urin sekunder",
+            'answer_2' => "Glomerolus sebagai filtrasi menghasilkan urin primer",
+            'answer_3' => "Tubulus kolektivus sebagai augmentasi menghasilkan urin sesungguhnya",
+            'answer_4' => "Lengkung henle sebagai reabsorpsi menghasilkan urin sekunder",
+            'soal_image' => "nefron.jpg"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '20',
+            'difficulty_id' => '2',
+        ]);
+
+        // easy
+        DB::table('bio11_soals')->insert([
+            'question' => 'Niko mengalami batuk yang berkepanjangan dan menyebabkan batuk berdarah. Setelah dirontgen, terdapat bintik-bintik pada alveolusnya yang disebabkan oleh bakteri. Diagnosis dokter Niko menderita penyakit...',
+            'answer_correct' => 'TBC',
+            'answer_1' => "Asfiksi",
+            'answer_2' => "Asidosis",
+            'answer_3' => "Sinusitis",
+            'answer_4' => "Emfisema"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '21',
+            'difficulty_id' => '1',
+        ]);
+
+        // easy
+        DB::table('bio11_soals')->insert([
+            'question' => 'Penerapan bioteknologi bagi kehidupan manusia umumnya bermanfaat dalam meningkatkan kesejahteraan masyarakat. Tetapi dampak negatif yang mungkin timbul adalah hilangnya plasma nutfah yang akan menyebabkan....',
+            'answer_correct' => 'keanekaragaman hayati menurun',
+            'answer_1' => "punahnya organisme langka",
+            'answer_2' => "berkurangnya daya dukung lingkungan",
+            'answer_3' => "hilangnya daya dukung lingkungan",
+            'answer_4' => "biaya rehabilitasi hutan meningkat"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '22',
+            'difficulty_id' => '1',
+        ]);
+
+        // hard
+        DB::table('bio11_soals')->insert([
+            'question' => 'Hasil percobaan enzim katalase menggunakan potongan hati dan H2O2 adalah sebagai berikut: \n
+            
+            Data di bawah menunjukkan bahwa yang memengaruhi kinerja enzim antara lain adalah....',
+            'answer_correct' => 'suhu dan pH',
+            'answer_1' => "banyaknya gelembung",
+            'answer_2' => "potongan hati",
+            'answer_3' => "macam substrat",
+            'answer_4' => " jumlah H2O2",
+            'soal_image' => "kinerja.jpg"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '23',
+            'difficulty_id' => '3',
+        ]);
+
+         // very hard
+         DB::table('bio11_soals')->insert([
+            'question' => 'Disilangkan tanaman mangga buah bulat manis (BBMM) dengan buah lonjong manis (bbMm) hasil dari persilangan tersebut  adalah....            ',
+            'answer_correct' => '100 % bulat manis',
+            'answer_1' => "75 % bulat manis : 25 % lonjong manis",
+            'answer_2' => "50 % bulat manis : 50 % lonjong manis",
+            'answer_3' => "50 % bulat manis : 50 % lonjong pahit",
+            'answer_4' => "100 % lonjong manis"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '24',
+            'difficulty_id' => '4',
+        ]);
+
+        // hard
+        DB::table('bio11_soals')->insert([
+            'question' => 'Berikut ini merupakan kelainan pada manusia yang terpaut autosom adalah....',
+            'answer_correct' => 'Albino',
+            'answer_1' => "Hemofilia",
+            'answer_2' => "Buta warna",
+            'answer_3' => "Anodontia",
+            'answer_4' => "Hypertrichosis"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '25',
+            'difficulty_id' => '3',
+        ]);
     }
 }
