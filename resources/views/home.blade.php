@@ -15,15 +15,15 @@
         <p>You can access our website with this link</p>
         <ul class="nav nav-pills flex-column">
           <li class="nav-item btn btn-dark">
-            <a class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">123</a>
+            <a class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Instagram</a>
           </li>
           <br>
           <li class="nav-item btn btn-dark">
-            <a class="nav-link "  >123</a>
+            <a class="nav-link" href="https://www.youtube.com/watch?v=aCgP8BFjrw4&ab_channel=vector">Facebook</a>
           </li>
           <br>
           <li class="nav-item btn btn-dark">
-            <a class="nav-link "  >123</a>
+            <a class="nav-link" href="https://www.youtube.com/watch?v=cKw3rtDnPK4&ab_channel=LordKazuma">YouTube</a>
           </li>
         </ul>
         <hr class="d-sm-none">
