@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\LoginController;
+use App\Http\Controllers\Api\Auth\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,10 @@ Route::post('refresh',  [LoginController::class, 'refresh']);
 
 Route::group(['middleware'=>'auth:api'], function() {
     Route::post('logout', [LoginController::class, 'logout']);
+
+    Route::get('users',  [UserController::class, 'index']);
+    Route::get('users/{id}',  [UserController::class, 'show']);
+
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
