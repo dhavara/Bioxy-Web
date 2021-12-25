@@ -163,7 +163,7 @@ class QuizController extends Controller
 
         $ip = new IpController();
         Log::create([
-            'table' => 'bio11_users',
+            'table' => 'bio11_users_histories',
             'creator' => Auth::user()->id,
             'path' => "QuizController@result",
             'desc' => "Create new data in User History",
