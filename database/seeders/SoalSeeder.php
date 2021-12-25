@@ -417,5 +417,37 @@ class SoalSeeder extends Seeder
             'soal_id' => '25',
             'difficulty_id' => '3',
         ]);
+
+        // hard
+        DB::table('bio11_soals')->insert([
+            'question' => 'Salah satu dampak negatif bioteknologi yaitu terganggunya keanekaragaman hayati yang ditunjukkan dengan....',
+            'answer_correct' => 'kecenderungan penggunaan bibit unggul menyingkirkan varietas lokal yang kurang unggul',
+            'answer_1' => "menurunnya kualitas kesuburan tanah",
+            'answer_2' => "banyak mikroogranisme tanah yang mengalami mutasi",
+            'answer_3' => "limbah yang berasal dari proses bioteknologi akan mencemari lingkungan",
+            'answer_4' => "polusi gen akan memicu tumbuhnya tanaman liar yang dapat mengganggu keseimbangan lingkungan"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '26',
+            'difficulty_id' => '1',
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '26',
+            'difficulty_id' => '2',
+        ]);
+
+        DB::table('bio11_soals')->insert([
+            'question' => 'Perhatikan peta silsislah hemofili berikut ini! Dari data silsilah di bawah dapat diketahui bahwa....',
+            'answer_correct' => 'ibu carier',
+            'answer_1' => "ayah carier",
+            'answer_2' => "ibu homozigot resesif",
+            'answer_3' => "ibu homozigot dominan",
+            'answer_4' => "ayah homozigot dominan",
+            'soal_image' => "hereditas.png"
+        ]);
+        DB::table('bio11_soals_difficulties')->insert([
+            'soal_id' => '27',
+            'difficulty_id' => '3',
+        ]);
     }
 }

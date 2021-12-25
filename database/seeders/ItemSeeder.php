@@ -216,5 +216,10 @@ class ItemSeeder extends Seeder
             'hex_code' => '#AAF0D1',
             'price' => '1500'
         ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Biru Dongker',
+            'hex_code' => '#000080',
+            'price' => '1500'
+        ]);
     }
 }
