@@ -29,8 +29,11 @@ class ProfileController extends Controller
     public function show(int $id) // saat kita mengetikkan /profile di uri
     {
         $lastId = User::all()->sortByDesc('id')->first()['id'];
-        if ($id == Auth::user()->id || $id > $lastId) {
+        if ($id == Auth::user()->id) {
             return redirect('/profile');
+        }
+        else if ($id > $lastId) {
+            return redirect('/profile')->with('not-found', "Pengguna dengan ID ".$id." tidak ditemukan.");
         }
 
         return view('otherprofile', [
