@@ -2,20 +2,20 @@
 
 @section('content')
 
-@if (session('fail'))
-  <div class="alert alert-danger alert-dismissable custom-danger-box" style="margin: 15px;">
-     <strong> {{ session('fail') }} </strong>
-  </div>
-@endif
-@if (session('success'))
-  <div class="alert alert-success alert-dismissable custom-success-box" style="margin: 15px;">
-     <strong> {{ session('success') }} </strong>
-  </div>
-@endif
-
     <div class="container p-5 my-5 bg-dark text-white">
         <h1>Toko</h1>
     </div>
+
+    @if (session('fail'))
+      <div class="alert alert-danger alert-dismissable custom-danger-box" style="margin: 15px;">
+         <strong> {{ session('fail') }} </strong>
+      </div>
+    @endif
+    @if (session('success'))
+      <div class="alert alert-success alert-dismissable custom-success-box" style="margin: 15px;">
+         <strong> {{ session('success') }} </strong>
+      </div>
+    @endif
 
     <div class="container d-flex justify-content-between">
         <h3>Gelar</h3>
