@@ -28,7 +28,8 @@ class ProfileController extends Controller
 
     public function show(int $id) // saat kita mengetikkan /profile di uri
     {
-        if ($id == Auth::user()->id) {
+        $lastId = User::all()->sortByDesc('id')->first()['id'];
+        if ($id == Auth::user()->id || $id > $lastId) {
             return redirect('/profile');
         }
 
