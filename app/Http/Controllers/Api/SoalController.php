@@ -28,7 +28,7 @@ class SoalController extends Controller
 
         return [
             'message' => 'Sukses! Data telah diambil.',
-            'soal' => SoalResource::collection($soal)
+            'soals' => SoalResource::collection($soal)
         ];
     }
 
@@ -46,7 +46,7 @@ class SoalController extends Controller
 
         return [
             'message' => 'Sukses! Data telah diambil.',
-            'soal' => SoalResource::collection($soal)
+            'soals' => SoalResource::collection($soal)
         ];
     }
 }

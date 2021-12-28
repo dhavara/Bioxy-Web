@@ -27,7 +27,7 @@ class DifficultyController extends Controller
         
         return [
             'message' => 'Sukses! Data telah diambil.',
-            'difficulty' => DifficultyResource::collection($soal)
+            'difficulties' => DifficultyResource::collection($soal)
         ];
     }
 }

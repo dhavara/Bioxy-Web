@@ -27,7 +27,7 @@ class UserController extends Controller
 
         return [
             'message' => 'Sukses! Data telah diambil.',
-            'user' => UserResource::collection($user)
+            'users' => UserResource::collection($user)
         ];
     }
 
@@ -45,7 +45,7 @@ class UserController extends Controller
 
         return [
             'message' => 'Sukses! Data telah diambil.',
-            'user' => UserResource::collection($user)
+            'users' => UserResource::collection($user)
         ];
     }
 }
