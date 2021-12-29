@@ -36,7 +36,7 @@ class ProfileController extends Controller
             return redirect('/profile')->with('not-found', "Pengguna dengan ID ".$id." tidak ditemukan.");
         }
 
-        return view('otherprofile', [
+        return view('profile', [
             "user" => User::findOrFail($id),
             "detail" => UserDetail::where('user_id', $id)->get()->first(),
             "histories" => UserHistory::where('user_id', $id)->get()->sortByDesc('point')

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div id="section1" class="container bg-dark text-white text-center" style="padding:100px;">
+    <div id="section1" class="container bg-secondary text-white text-center" style="padding:100px;">
         <h1>Welcome to Bioxy Website</h1>
         <br>
         <p class= "alert alert-dark">This place where you can knows everything about Biology and improve your with aesthetic standard visual design!</p>

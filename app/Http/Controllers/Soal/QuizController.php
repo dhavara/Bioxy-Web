@@ -134,7 +134,12 @@ class QuizController extends Controller
                 "nomor" => $nomor,
                 'benar' => $benar
             ]);
-            return redirect()->back()->with('checkpoint', $returnedRequest);
+            
+            if ($data['correct']) {
+                return redirect()->back()->with('correct', "Jawaban Anda benar! +10 poin.")->with('checkpoint', $returnedRequest);
+            } else {
+                return redirect()->back()->with('wrong', "Jawaban Anda salah! -1 nyawa.")->with('checkpoint', $returnedRequest);
+            }
         }
     }
 

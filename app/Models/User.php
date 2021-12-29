@@ -51,6 +51,10 @@ class User extends Authenticatable
         return $this->hasMany(UserColor::class, 'user_id', 'id');
     }
 
+    public function roles() {
+        return $this->hasMany(UserRole::class, 'user_id', 'id');
+    }
+
     public function token() {
         return $this->hasMany(Token::class, 'user_id', 'id');
     }

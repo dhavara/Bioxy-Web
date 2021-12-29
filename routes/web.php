@@ -26,12 +26,12 @@ Route::get('/home', function () {
 Auth::routes();
 
 Route::get('/leaderboard', [App\Http\Controllers\LeaderboardController::class, 'index'])->name('leaderboard');
-Route::get('/profile/id={id}', [App\Http\Controllers\Auth\ProfileController::class, 'show']);
 
 
 Route::middleware(['auth'])->group(function(){
     Route::post('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profilePost'])->name('profile');
     Route::get('/profile', [App\Http\Controllers\Auth\ProfileController::class, 'profileGet']);
+    Route::get('/profile/id={id}', [App\Http\Controllers\Auth\ProfileController::class, 'show']);
     // Route::resource('/profile', ProfileController::class);
     Route::get('/profile/edit', [App\Http\Controllers\Auth\ProfileController::class, 'edit'])->name('profileEdit');
     Route::post('/profile/edit', [App\Http\Controllers\Auth\ProfileController::class, 'update'])->name('profileUpdate');

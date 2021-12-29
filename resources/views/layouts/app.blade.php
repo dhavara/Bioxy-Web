@@ -21,7 +21,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     
-    <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
@@ -31,7 +31,7 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-md navbar-primary bg-secondary shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Bioxy') }}
@@ -43,15 +43,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link {{ $active_quiz ?? '' }}" href="{{ route('quiz') }}">Kuis</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ $active_shop ?? '' }}" href="{{ route('shop') }}">Toko</a>
-                        </li>
+                        @guest
+                        @else
+                        @if (Auth::user()->roles->sortByDesc("role_id", 2)->first()->role != null)
+                            <li class="nav-item">
+                                <a class="nav-link {{ $active_quiz ?? '' }}" href="{{ route('quiz') }}">Kuis</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ $active_shop ?? '' }}" href="{{ route('shop') }}">Toko</a>
+                            </li>
+                        @endif
+                        @endguest
                         <li class="nav-item">
                             <a class="nav-link {{ $active_leaderboard ?? '' }}" href="{{ route('leaderboard') }}">Leaderboard</a>
                         </li>
+                        @guest
+                        @else
+                        @if (Auth::user()->roles->sortByDesc("role_id", 1)->first()->role != null)
+                            <li class="nav-item">
+                                <a class="nav-link {{ $active_dashboard ?? '' }}" href=" ">Dashboard</a>
+                            </li>
+                        @endif
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -78,14 +91,14 @@
                                     {{ Auth::user()->username }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('profile') }}"
+                                <div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-white" href="{{ route('profile') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('profile-form').submit();">
                                         {{ __('Profile') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item text-white" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -114,9 +127,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw=="crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {{-- Boostrap 5 --}}
+    {{-- Boostrap 5
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> --}}
     {{-- DataTables --}}
     <link type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     {{-- Boostrap 5 --}}
@@ -160,6 +173,9 @@
                     { "bSortable": false, "sWidth": '40%' },
                 ],
                 "bAutoWidth": false,
+                "language": {
+                    "emptyTable": "Data ini masih kosong"
+                }
             });
         });
         $(document).ready(function(){
