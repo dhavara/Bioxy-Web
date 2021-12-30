@@ -23,9 +23,11 @@
     
     <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet" type="text/css">
 
+    <!-- Slick -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
 
+    <!-- Bootstrap Select -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
     referrerpolicy="no-referrer" /></head>
 </head>
@@ -84,7 +86,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link nav-disabled text-black">Total Poin: {{ Auth::user()->detail['point'] }}</a>
+                                <a class="nav-link nav-disabled text-primary">Total Poin: {{ Auth::user()->detail['point'] }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

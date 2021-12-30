@@ -39,10 +39,12 @@
                                     {{ $user->detail->title['title'] }}
                                 </div>
                                 <hr>
-                                @if ($user['id'] == Auth::user()->id)
-                                    <div class="container d-flex justify-content-center">
-                                        <a class="w-100 btn btn-lg btn-dark" href="{{ route('profileEdit') }}">Edit Profile</a>
-                                    </div>
+                                @if (!Auth::guest())
+                                    @if ($user['id'] == Auth::user()->id)
+                                        <div class="container d-flex justify-content-center">
+                                            <a class="w-100 btn btn-lg btn-dark" href="{{ route('profileEdit') }}">Edit Profile</a>
+                                        </div>
+                                    @endif
                                 @endif
                             </div>
                         </div>

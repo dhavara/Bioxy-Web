@@ -29,11 +29,12 @@ class ProfileController extends Controller
     public function show(int $id) // saat kita mengetikkan /profile di uri
     {
         $lastId = User::all()->sortByDesc('id')->first()['id'];
-        if ($id == Auth::user()->id) {
-            return redirect('/profile');
-        }
-        else if ($id > $lastId) {
-            return redirect('/profile')->with('not-found', "Pengguna dengan ID ".$id." tidak ditemukan.");
+        if (!Auth::guest()) {
+            if ($id == Auth::user()->id) {
+                return redirect('/profile');
+            } else if ($id > $lastId) {
+                return redirect('/profile')->with('not-found', "Pengguna dengan ID " . $id . " tidak ditemukan.");
+            }
         }
 
         return view('profile', [
@@ -45,7 +46,7 @@ class ProfileController extends Controller
 
     public function edit()
     {
-        
+
         $user = User::findOrFail(Auth::user()->id);
         return view('editprofile', [
             'user' => $user
@@ -77,33 +78,30 @@ class ProfileController extends Controller
         $img_name = null;
         $detail = UserDetail::findOrFail($request->id);
         if ($request->hasFile('img')) { // jika mengupload gambar
-            if (file_exists('\img\user\\'.$detail->user_image)) {
-                unlink(public_path().'\img\user\\'.$detail->user_image);
+            if (file_exists('\img\user\\' . $detail->user_image)) {
+                unlink(public_path() . '\img\user\\' . $detail->user_image);
             }
             $image = $request->file('img');
             $img_name = $request->username .  '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/img/user');
             $image->move($destinationPath, $img_name);
-        } 
-        else { // jika tidak mengupload gambar dan mengganti nama
+        } else { // jika tidak mengupload gambar dan mengganti nama
             if ($detail->user_image != null) {
                 $extension = strrchr($detail->user_image, '.');
                 $img_name = $request->username . $extension;
-                rename(public_path().'\img\user\\' . $detail->user_image, public_path().'\img\user\\' . $img_name);
+                rename(public_path() . '\img\user\\' . $detail->user_image, public_path() . '\img\user\\' . $img_name);
             }
         }
 
         if ($request->frame == 'null') {
             $frame = null;
-        }
-        else {
+        } else {
             $frame = $request->frame;
         }
 
         if ($request->color == 'null') {
             $color = null;
-        }
-        else {
+        } else {
             $color = $request->color;
         }
 
