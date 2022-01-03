@@ -4,6 +4,7 @@
 
     <div class="container p-5 bg-secondary text-white">
         <h1>Kuis</h1>
+        <h1 class="d-none" id="difficulty">{{ $difficulty }}</h1>
     </div>
 
     <div class="main-body">
@@ -30,7 +31,7 @@
                         </div>
                         <div class="container d-flex justify-content-between">
                             <h4>Poin: {{ $point }}</h4>
-                            <h4 id="time">01:00</h4>
+                            <h4 id="time">00:00</h4>
                             <h4>Nyawa: {{ $health }}</h4>
                         </div>
 

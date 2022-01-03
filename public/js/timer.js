@@ -15,8 +15,32 @@ function timer(duration, display) {
 	}, 1000);
 }
 
+function obtainPhpVar() {
+    let difficulty = document.querySelector("#difficulty").innerHTML;
+    return parseInt(difficulty);
+}
+
 window.onload = function() {
-    let duration = 60
+    let difficulty = obtainPhpVar();
+    let duration = 60;
+    switch (difficulty) {
+        case 1:
+            duration = 60;
+            document.querySelector("#time").innerHTML = "01:00";
+            break;
+        case 2:
+            duration = 45;
+            document.querySelector("#time").innerHTML = "00:45";
+            break;
+        case 3:
+            duration = 30;
+            document.querySelector("#time").innerHTML = "00:30";
+            break;
+        case 4:
+            duration = 15;
+            document.querySelector("#time").innerHTML = "00:15";
+            break;
+    }
     let display = document.querySelector('#time');
     timer(duration, display);
 }
