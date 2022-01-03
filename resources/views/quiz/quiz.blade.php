@@ -70,10 +70,10 @@
                                 <div class="container d-flex justify-content-center">
                             @endif
                             @if ($key == 'correct')
-                                <a class="w-50 btn btn-lg btn-dark mt-2 me-1 ms-1" href="{{ route('quiz') }}" onclick="event.preventDefault();
+                                <a class="w-50 btn btn-lg  btn-secondary mt-2 me-1 ms-1" href="{{ route('quiz') }}" onclick="event.preventDefault();
                                         document.getElementById('correct-ans').submit();">{{ $answer }}</a>
                             @else
-                                <a class="w-50 btn btn-lg btn-dark mt-2 me-1 ms-1" href="{{ route('quiz') }}" onclick="event.preventDefault();
+                                <a class="w-50 btn btn-lg  btn-secondary mt-2 me-1 ms-1" href="{{ route('quiz') }}" onclick="event.preventDefault();
                                         document.getElementById('wrong-ans').submit();">{{ $answer }}</a>
                             @endif
                             @if ($iteration % 2 == 0 || $iteration == 5)
