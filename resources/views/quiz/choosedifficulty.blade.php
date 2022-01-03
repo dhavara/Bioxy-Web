@@ -23,7 +23,7 @@
                         </h4>
                         @foreach ($difficulty as $d)
                             <div class="container d-flex justify-content-center">
-                                <a class="w-50 btn btn-lg btn-dark mt-2 me-1 ms-1" href="{{ route('quiz') }}"
+                                <a class="w-50 btn btn-lg  btn-secondary mt-2 me-1 ms-1" href="{{ route('quiz') }}"
                                     onclick="event.preventDefault();
                                             document.getElementById('{{ $d['difficulty'] }}').submit();"><b>{{ $d['difficulty'] }}</b> ({{ $d['health'] }} nyawa)</a>
                             </div>

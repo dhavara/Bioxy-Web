@@ -42,7 +42,7 @@
                                 @if (!Auth::guest())
                                     @if ($user['id'] == Auth::user()->id)
                                         <div class="container d-flex justify-content-center">
-                                            <a class="w-100 btn btn-lg btn-dark" href="{{ route('profileEdit') }}">Edit Profile</a>
+                                            <a class="w-100 btn btn-lg  btn-secondary" href="{{ route('profileEdit') }}">Edit Profile</a>
                                         </div>
                                     @endif
                                 @endif

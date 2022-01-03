@@ -15,10 +15,10 @@
         <div class="pt-5">
             <div class="card bg-primary">
                 <div class="d-flex justify-content-center pt-2 pb-2">
-                    <button class="btn btn-lg btn-dark btn-leaderboard ms-2 me-2" id="btn-easy" onclick="easy()">Mudah</button>
-                    <button class="btn btn-lg btn-dark w-10 btn-leaderboard ms-2 me-2" id="btn-medium" onclick="medium()">Sedang</button>
-                    <button class="btn btn-lg btn-dark w-10 btn-leaderboard ms-2 me-2" id="btn-hard" onclick="hard()">Sulit</button>
-                    <button class="btn btn-lg btn-dark w-10 btn-leaderboard ms-2 me-2" id="btn-vhard" onclick="vhard()">Sangat Sulit</button>
+                    <button class="btn btn-lg  btn-secondary btn-leaderboard ms-2 me-2" id="btn-easy" onclick="easy()">Mudah</button>
+                    <button class="btn btn-lg  btn-secondary w-10 btn-leaderboard ms-2 me-2" id="btn-medium" onclick="medium()">Sedang</button>
+                    <button class="btn btn-lg  btn-secondary w-10 btn-leaderboard ms-2 me-2" id="btn-hard" onclick="hard()">Sulit</button>
+                    <button class="btn btn-lg  btn-secondary w-10 btn-leaderboard ms-2 me-2" id="btn-vhard" onclick="vhard()">Sangat Sulit</button>
                 </div>
             </div>
         </div>
