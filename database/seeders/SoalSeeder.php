@@ -496,8 +496,12 @@ class SoalSeeder extends Seeder
 
         DB::table('bio11_soals')->insert([
             'question' => 'Di bawah ini beberapa pernyataan yang berhubungan dengan respirasi!
-            1) Terjadinya pengikatan oksigen oleh kapiler darah alveolus 2) merupakan respirasi eksternal 3) Proses dipengaruhi O2
-            4) Tekanan partial oksigen alveolus tinggi 5) Tekanan partial oksigen jaringan tinggi
+
+            1) Terjadinya pengikatan oksigen oleh kapiler darah alveolus \n
+            2) merupakan respirasi eksternal \n
+            3) Proses dipengaruhi O2 \n
+            4) Tekanan partial oksigen alveolus tinggi 5) Tekanan partial oksigen jaringan tinggi \n
+
             Dari pernyataan di atas, pernyataan yang sesuai dengan reaksi Hb + 4O2 ==> HbO2 adalah….',
             'answer_correct' => '1, 2, dan 4',
             'answer_1' => "1, 2, dan 3",
