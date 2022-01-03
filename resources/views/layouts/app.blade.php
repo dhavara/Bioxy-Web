@@ -47,7 +47,7 @@
                     <ul class="navbar-nav me-auto">
                         @guest
                         @else
-                        @if (Auth::user()->roles->sortByDesc("role_id", 2)->first()->role != null)
+                        @if (Auth::user()->roles->sortByDesc("role_id", 1)->first()->role != null)
                             <li class="nav-item">
                                 <a class="nav-link {{ $active_quiz ?? '' }}" href="{{ route('quiz') }}">Kuis</a>
                             </li>
@@ -61,7 +61,7 @@
                         </li>
                         @guest
                         @else
-                        @if (Auth::user()->roles->sortByDesc("role_id", 1)->first()->role != null)
+                        @if (Auth::user()->roles->sortByDesc("role_id", 2)->first()->role != null)
                             <li class="nav-item">
                                 <a class="nav-link {{ $active_dashboard ?? '' }}" href=" ">Dashboard</a>
                             </li>
