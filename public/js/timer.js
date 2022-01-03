@@ -25,20 +25,20 @@ window.onload = function() {
     let duration = 60;
     switch (difficulty) {
         case 1:
+            duration = 90;
+            document.querySelector("#time").innerHTML = "01:30";
+            break;
+        case 2:
             duration = 60;
             document.querySelector("#time").innerHTML = "01:00";
             break;
-        case 2:
+        case 3:
             duration = 45;
             document.querySelector("#time").innerHTML = "00:45";
             break;
-        case 3:
-            duration = 30;
-            document.querySelector("#time").innerHTML = "00:30";
-            break;
         case 4:
-            duration = 15;
-            document.querySelector("#time").innerHTML = "00:15";
+            duration = 20;
+            document.querySelector("#time").innerHTML = "00:20";
             break;
     }
     let display = document.querySelector('#time');
