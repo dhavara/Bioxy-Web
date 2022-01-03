@@ -138,7 +138,12 @@ class QuizController extends Controller
             if ($data['correct']) {
                 return redirect()->back()->with('correct', "Jawaban Anda benar! +10 poin.")->with('checkpoint', $returnedRequest);
             } else {
-                return redirect()->back()->with('wrong', "Jawaban Anda salah! -1 nyawa.")->with('checkpoint', $returnedRequest);
+                if ($data['timesup']) {
+                    return redirect()->back()->with('wrong', "Waktu habis! -1 nyawa.")->with('checkpoint', $returnedRequest);
+                }
+                else {
+                    return redirect()->back()->with('wrong', "Jawaban Anda salah! -1 nyawa.")->with('checkpoint', $returnedRequest);
+                }
             }
         }
     }

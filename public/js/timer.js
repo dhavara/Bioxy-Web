@@ -3,7 +3,7 @@ function timer(duration, display) {
 	setInterval(function () {
         if (--timer < 0) {
 			timer = 0;
-            
+            document.querySelector('#times-up').submit();
 		}
 		minutes = parseInt((timer / 60) % 60, 10);
 		seconds = parseInt(timer % 60, 10);

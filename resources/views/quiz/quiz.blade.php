@@ -30,7 +30,7 @@
                         </div>
                         <div class="container d-flex justify-content-between">
                             <h4>Poin: {{ $point }}</h4>
-                            <h4 id="time">00:00</h4>
+                            <h4 id="time">01:00</h4>
                             <h4>Nyawa: {{ $health }}</h4>
                         </div>
 
@@ -91,6 +91,7 @@
                         <input type="hidden" id="health" name="health" value={{ $health }}>
                         <input type="hidden" id="nomor" name="nomor" value={{ $nomor }}>
                         <input type="hidden" id="benar" name="benar" value={{ $benar }}>
+                        <input type="hidden" id="timesup" name="timesup" value={{ false }}>
                     </form>
 
                     <form id="wrong-ans" action="{{ route('check') }}" method="POST" class="d-none">
@@ -101,6 +102,18 @@
                         <input type="hidden" id="health" name="health" value={{ $health }}>
                         <input type="hidden" id="nomor" name="nomor" value={{ $nomor }}>
                         <input type="hidden" id="benar" name="benar" value={{ $benar }}>
+                        <input type="hidden" id="timesup" name="timesup" value={{ false }}>
+                    </form>
+
+                    <form id="times-up" action="{{ route('check') }}" method="POST" class="d-none">
+                        @csrf
+                        <input type="hidden" id="difficulty" name="difficulty" value={{ $difficulty }}>
+                        <input type="hidden" id="correct" name="correct" value={{ false }}>
+                        <input type="hidden" id="point" name="point" value={{ $point }}>
+                        <input type="hidden" id="health" name="health" value={{ $health }}>
+                        <input type="hidden" id="nomor" name="nomor" value={{ $nomor }}>
+                        <input type="hidden" id="benar" name="benar" value={{ $benar }}>
+                        <input type="hidden" id="timesup" name="timesup" value={{ true }}>
                     </form>
                 </div>
             </div>
