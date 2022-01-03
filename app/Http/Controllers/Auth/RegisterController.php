@@ -7,6 +7,7 @@ use App\Models\Log;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\UserDetail;
+use App\Models\UserRole;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -85,6 +86,11 @@ class RegisterController extends Controller
             'user_id' => User::firstWhere('name', $data['name'])['id'],
         ]);
 
+        UserRole::create([
+            'user_id' => User::firstWhere('name', $data['name'])['id'],
+            'role_id' => 1
+        ]);
+
         $ip = new IpController();
         Log::create([
             'table'=>'bio11_users',
@@ -99,6 +105,14 @@ class RegisterController extends Controller
             'creator'=> User::firstWhere('name', $data['name'])['id'],
             'path' => "RegisterController@create",
             'desc' => "Create new data in User Details",
+            'ip' => $ip->getIp()
+        ]);
+
+        Log::create([
+            'table'=>'bio11_users_roles',
+            'creator'=> User::firstWhere('name', $data['name'])['id'],
+            'path' => "RegisterController@create",
+            'desc' => "Create new data in User Roles",
             'ip' => $ip->getIp()
         ]);
 
