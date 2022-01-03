@@ -90,7 +90,7 @@ class RegisterController extends Controller
 
         UserRole::create([
             'user_id' => User::firstWhere('username', $data['username'])['id'],
-            'role_id' => 1
+            'role_id' => 2
         ]);
 
         UserTitle::create([
