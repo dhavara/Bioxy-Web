@@ -23,9 +23,14 @@
                 <div class="card bg-primary text-white">
 
                     <div class="card-body">
+                        <div class="container d-flex justify-content-center">
+                            <h4></h4>
+                            <h4>Soal {{ $nomor }}</h4>
+                            <h4></h4>
+                        </div>
                         <div class="container d-flex justify-content-between">
                             <h4>Poin: {{ $point }}</h4>
-                            <h4>Soal ke-{{ $nomor }}</h4>
+                            <h4 id="time">00:00</h4>
                             <h4>Nyawa: {{ $health }}</h4>
                         </div>
 
@@ -101,5 +106,7 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
+
+<script src="/js/timer.js" charset="utf-8" type="text/javascript"></script>
 @endsection
