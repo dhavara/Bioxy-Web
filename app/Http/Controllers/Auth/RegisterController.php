@@ -84,24 +84,24 @@ class RegisterController extends Controller
         ]);
 
         UserDetail::create([
-            'user_id' => User::firstWhere('name', $data['name'])['id'],
+            'user_id' => User::firstWhere('username', $data['username'])['id'],
             'user_title' => 1
         ]);
 
         UserRole::create([
-            'user_id' => User::firstWhere('name', $data['name'])['id'],
+            'user_id' => User::firstWhere('username', $data['username'])['id'],
             'role_id' => 1
         ]);
 
         UserTitle::create([
-            'user_id' => User::firstWhere('name', $data['name'])['id'],
+            'user_id' => User::firstWhere('username', $data['username'])['id'],
             'title_id' => 1
         ]);
 
         $ip = new IpController();
         Log::create([
             'table'=>'bio11_users',
-            'creator'=> User::firstWhere('name', $data['name'])['id'], // Auth::user()->id
+            'creator'=> User::firstWhere('username', $data['username'])['id'], // Auth::user()->id
             'path' => "RegisterController@create",
             'desc' => "Create new data in User",
             'ip' => $ip->getIp()
@@ -109,7 +109,7 @@ class RegisterController extends Controller
 
         Log::create([
             'table'=>'bio11_users_details',
-            'creator'=> User::firstWhere('name', $data['name'])['id'],
+            'creator'=> User::firstWhere('username', $data['username'])['id'],
             'path' => "RegisterController@create",
             'desc' => "Create new data in User Details",
             'ip' => $ip->getIp()
@@ -117,7 +117,7 @@ class RegisterController extends Controller
 
         Log::create([
             'table'=>'bio11_users_roles',
-            'creator'=> User::firstWhere('name', $data['name'])['id'],
+            'creator'=> User::firstWhere('username', $data['username'])['id'],
             'path' => "RegisterController@create",
             'desc' => "Create new data in User Roles",
             'ip' => $ip->getIp()
@@ -125,7 +125,7 @@ class RegisterController extends Controller
 
         Log::create([
             'table'=>'bio11_users_titles',
-            'creator'=> User::firstWhere('name', $data['name'])['id'],
+            'creator'=> User::firstWhere('username', $data['username'])['id'],
             'path' => "RegisterController@create",
             'desc' => "Create new data in User Titles",
             'ip' => $ip->getIp()
