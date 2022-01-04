@@ -14,15 +14,15 @@
         <h2 class="mt-4">Bioxy Access</h2>
         <p>You can access our website with this link</p>
         <ul class="nav nav-pills flex-column">
-          <li class="nav-item btn btn-dark">
+          <li class="nav-item btn btn-secondary">
             <a class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Instagram</a>
           </li>
           <br>
-          <li class="nav-item btn btn-dark">
+          <li class="nav-item btn btn-secondary">
             <a class="nav-link" href="https://www.youtube.com/watch?v=aCgP8BFjrw4&ab_channel=vector">Facebook</a>
           </li>
           <br>
-          <li class="nav-item btn btn-dark">
+          <li class="nav-item btn btn-secondary">
             <a class="nav-link" href="https://www.youtube.com/watch?v=cKw3rtDnPK4&ab_channel=LordKazuma">YouTube</a>
           </li>
         </ul>
@@ -65,7 +65,7 @@
   <div class="mt-5">
     <h3>Bioxy Short Story</h3>
     <p>Short story about how we can build some eCommerce like Bioxy</p>
-    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
       Open Story
     </button>
   </div>

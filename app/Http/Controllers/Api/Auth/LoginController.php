@@ -27,7 +27,7 @@ class LoginController extends Controller
         if($check->detail['is_active'] == '1') {
             if($check->detail['is_login'] == '0') {
                 if(Auth::attempt($user)) {
-                    $this->isLogin(Auth::id());
+                    // $this->isLogin(Auth::id());
                     $response = Http::asForm()->post('http://bioxy.nonah/oauth/token', [
                         'grant_type' => 'password',
                         'client_id' => $client->id /*'9530b116-04ad-4b7c-99b8-0b8f6723b5fd'*/,
@@ -37,7 +37,13 @@ class LoginController extends Controller
                         'scope' => '*',
                     ]);
 
-                    return $response->json();
+                    return response([
+                        'id' => Auth::id(),
+                        'token_type' => $response->json()['token_type'],
+                        'expires_in' => $response->json()['expires_in'],
+                        'access_token' => $response->json()['access_token'],
+                        'refresh_token' => $response->json()['refresh_token'],
+                    ]);
                 }
                 else {
                     return response([

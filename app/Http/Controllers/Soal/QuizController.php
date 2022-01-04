@@ -107,9 +107,14 @@ class QuizController extends Controller
         $nomor = (int) $data['nomor'] + 1;
         $benar = (int) $data['benar'];
         $difficulty = $data['difficulty'];
+        $tambahHealth = false;
         if ($data['correct']) {
             $point += 10;
             $benar++;
+            if($benar % 5 == 0) {
+                $health++;
+                $tambahHealth = true;
+            }
         } else {
             $health--;
         }
@@ -136,7 +141,12 @@ class QuizController extends Controller
             ]);
             
             if ($data['correct']) {
-                return redirect()->back()->with('correct', "Jawaban Anda benar! +10 poin.")->with('checkpoint', $returnedRequest);
+                if ($tambahHealth) {
+                    return redirect()->back()->with('correct', "Jawaban Anda benar! +10 poin dan +1 nyawa.")->with('checkpoint', $returnedRequest);
+                }
+                else {
+                    return redirect()->back()->with('correct', "Jawaban Anda benar! +10 poin.")->with('checkpoint', $returnedRequest);
+                }
             } else {
                 if ($data['timesup']) {
                     return redirect()->back()->with('wrong', "Waktu habis! -1 nyawa.")->with('checkpoint', $returnedRequest);

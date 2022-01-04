@@ -243,6 +243,7 @@ class SoalSeeder extends Seeder
         //hard
         DB::table('bio11_soals')->insert([
             'question' => 'Bakteri kemosintesis yang terlibat dalam persamaan reaksi \n
+            
             Ca(NO2)2 +  O2 → Ca(NO3)2  adalah....',
             'answer_correct' => 'Nitrobacter',
             'answer_1' => "Nitrosomonas",
@@ -496,8 +497,12 @@ class SoalSeeder extends Seeder
 
         DB::table('bio11_soals')->insert([
             'question' => 'Di bawah ini beberapa pernyataan yang berhubungan dengan respirasi!
-            1) Terjadinya pengikatan oksigen oleh kapiler darah alveolus 2) merupakan respirasi eksternal 3) Proses dipengaruhi O2
-            4) Tekanan partial oksigen alveolus tinggi 5) Tekanan partial oksigen jaringan tinggi
+
+            1) Terjadinya pengikatan oksigen oleh kapiler darah alveolus \n
+            2) merupakan respirasi eksternal \n
+            3) Proses dipengaruhi O2 \n
+            4) Tekanan partial oksigen alveolus tinggi 5) Tekanan partial oksigen jaringan tinggi \n
+
             Dari pernyataan di atas, pernyataan yang sesuai dengan reaksi Hb + 4O2 ==> HbO2 adalah….',
             'answer_correct' => '1, 2, dan 4',
             'answer_1' => "1, 2, dan 3",
@@ -627,7 +632,12 @@ class SoalSeeder extends Seeder
         ]);
 
         DB::table('bio11_soals')->insert([
-            'question' => 'Suatu jaringan memiliki ciri-ciri sebagai berikut: 1) Gelap dan keruh 2) Sumber kolagen tersusun sejajar membentuk satu berkas 3) Terdapat pada persendian tulang pinggang
+            'question' => 'Suatu jaringan memiliki ciri-ciri sebagai berikut: \n
+
+            1) Gelap dan keruh \n
+            2) Sumber kolagen tersusun sejajar membentuk satu berkas \n
+            3) Terdapat pada persendian tulang pinggang \n
+
             Jaringan yang dimaksud adalah….',
             'answer_correct' => 'rawan fibrosa',
             'answer_1' => "rawan hialin",
@@ -654,7 +664,14 @@ class SoalSeeder extends Seeder
         ]);
 
         DB::table('bio11_soals')->insert([
-            'question' => 'Perhatikan jenis-jenis tulang berikut: 1)tulang pipa 2)tulang rawan 3)tulang pipih 4)tulang pendek 5)tulang spons
+            'question' => 'Perhatikan jenis-jenis tulang berikut: \n
+
+            1)tulang pipa \n
+            2)tulang rawan \n
+            3)tulang pipih \n
+            4)tulang pendek \n
+            5)tulang spons \n
+
             Kelompok tulang berdasarkan bentuknya ditunjukkan oleh nomor….',
             'answer_correct' => '1, 3, dan 4',
             'answer_1' => "1, 2, dan 3",
@@ -716,7 +733,14 @@ class SoalSeeder extends Seeder
         ]);
 
         DB::table('bio11_soals')->insert([
-            'question' => 'Di bawah ini adalah bagian dari berbagai organ tumbuhan: 1)Epidermis 2)Xilem 3)Floem 4)Korteks 5)Endodermis 
+            'question' => 'Di bawah ini adalah bagian dari berbagai organ tumbuhan: \n
+
+            1)Epidermis \n
+            2)Xilem \n
+            3)Floem \n
+            4)Korteks \n
+            5)Endodermis \n
+
             Jalannya transportasi air dan garam dari akar ke batang dan daun berturut-turut melalui…',
             'answer_correct' => '1-4-5-2',
             'answer_1' => "1-2-4-5",
@@ -800,7 +824,12 @@ class SoalSeeder extends Seeder
         ]);
 
         DB::table('bio11_soals')->insert([
-            'question' => 'Ditemukan jaringan dengan ciri-ciri sebagai berikut: -bentuk pipih, kubus atau silindris -terletak di permukaan organ -berfungsi sebagai proteksi dan sekresi 
+            'question' => 'Ditemukan jaringan dengan ciri-ciri sebagai berikut: \n
+
+            1)bentuk pipih, kubus atau silindris \n
+            2)terletak di permukaan organ \n
+            3)berfungsi sebagai proteksi dan sekresi \n
+
             Jaringan yang dimaksud adalah….',
             'answer_correct' => 'epitel',
             'answer_1' => "saraf",
@@ -938,7 +967,12 @@ class SoalSeeder extends Seeder
         ]); 
 
         DB::table('bio11_soals')->insert([
-            'question' => 'Pernyataan di bawah ini adalah ciri-ciri gangguan pada sistem gerak: 1)tulang patah atau retak 2)terjadi pembengkakan 3)kemungkinan terjadi pendarahan 
+            'question' => 'Pernyataan di bawah ini adalah ciri-ciri gangguan pada sistem gerak: \n
+            
+            1)tulang patah atau retak \n
+            2)terjadi pembengkakan \n
+            3)kemungkinan terjadi pendarahan \n
+
             Jenis gangguan pada sistem gerak tersebut adalah….',
             'answer_correct' => 'fraktura',
             'answer_1' => "kifosis ",

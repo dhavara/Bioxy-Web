@@ -31,7 +31,7 @@
                                 <h5>{{ $title['title'] }}</h5>
                                 <p>Harga: {{ $title['price'] }} Poin</p>
                                 <hr>
-                                <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                                <a class="btn btn-lg  btn-secondary" href="" onclick="event.preventDefault();
                             document.getElementById('{{ $title['title'] }}').submit();">Beli</a>
                             </div>
                             <form id="{{ $title['title'] }}" action="{{ route('purchase') }}" method="POST"
@@ -62,7 +62,7 @@
                                 </div>
                                 <p>Harga: {{ $frame['price'] }} Poin</p>
                                 <hr>
-                                <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                                <a class="btn btn-lg  btn-secondary" href="" onclick="event.preventDefault();
                             document.getElementById('{{ $frame['name'] }}').submit();">Beli</a>
                             </div>
                             <form id="{{ $frame['name'] }}" action="{{ route('purchase') }}" method="POST"
@@ -91,7 +91,7 @@
                                 <h5>{{ $color['name'] }}</h5>
                                 <p>Harga: {{ $color['price'] }} Poin</p>
                                 <hr>
-                                <a class="btn btn-lg btn-dark" href="" onclick="event.preventDefault();
+                                <a class="btn btn-lg  btn-secondary" href="" onclick="event.preventDefault();
                             document.getElementById('{{ $color['name'] }}').submit();">Beli</a>
                             </div>
                             <form id="{{ $color['name'] }}" action="{{ route('purchase') }}" method="POST"
