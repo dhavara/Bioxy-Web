@@ -63,7 +63,7 @@
                         @else
                         @if (Auth::user()->roles->firstWhere("role_id", 2) != null)
                             <li class="nav-item">
-                                <a class="nav-link {{ $active_dashboard ?? '' }}" href=" ">Dashboard</a>
+                                <a class="nav-link {{ $active_dashboard ?? '' }}" href="{{ route('user.index') }}">Dashboard</a>
                             </li>
                         @endif
                         @endguest
@@ -147,6 +147,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     
     <script>
+        $(document).ready(function() {
+            var thetable = $('.table-default').DataTable({});
+        });
         $(document).ready(function() {
             var thetable = $('.table-profile').DataTable({         
                 "aoColumns": [

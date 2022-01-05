@@ -39,8 +39,8 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/profile/edit', [App\Http\Controllers\Auth\ProfileController::class, 'edit'])->name('profileEdit');
         Route::post('/profile/edit', [App\Http\Controllers\Auth\ProfileController::class, 'update'])->name('profileUpdate');
 
-        Route::get('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'show'])->name('quiz');
-        Route::post('/quiz', [App\Http\Controllers\Soal\QuizController::class, 'check'])->name('check');
+        Route::get('/quiz', [App\Http\Controllers\QuizController::class, 'show'])->name('quiz');
+        Route::post('/quiz', [App\Http\Controllers\QuizController::class, 'check'])->name('check');
     
         Route::get('/shop', [App\Http\Controllers\Shop\ShopController::class, 'index'])->name('shop');
         Route::post('/shop', [App\Http\Controllers\Shop\ShopController::class, 'purchase'])->name('purchase');
@@ -48,7 +48,12 @@ Route::middleware(['auth'])->group(function(){
  
     
     Route::middleware(['admin'])->group(function () {
-
+        Route::resource('/dashboard/user', App\Http\Controllers\Admin\UserController::class, [
+            'names' => [
+                'index' => 'user.index',
+                'store' => 'faq.new',
+            ]
+        ]);
     });
  
 });
