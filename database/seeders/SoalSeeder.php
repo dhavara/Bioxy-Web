@@ -707,7 +707,7 @@ class SoalSeeder extends Seeder
         ]);
 
         DB::table('bio11_soals')->insert([
-            'question' => 'Perhatikan tabel berikut: Hubungan yang benar antara jaringan dengan fungsinya adalah….',
+            'question' => 'Organel yang merupakan tempat berlangsungnya respirasi sel adalah….',
             'answer_correct' => 'mitokondria',
             'answer_1' => "lisosom",
             'answer_2' => "nukleus",
