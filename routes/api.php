@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Auth\UserController;
 use App\Http\Controllers\Api\Quiz\QuizController;
 use App\Http\Controllers\Api\SoalController;
 use App\Http\Controllers\Api\DifficultyController;
+use App\Http\Controllers\Api\FrameController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,10 @@ Route::group(['middleware'=>'auth:api'], function() {
     // soal
     Route::get('soals',  [SoalController::class, 'index']);
     Route::get('soals/{id}',  [SoalController::class, 'show']);
+
+    // soal
+    Route::get('frames',  [FrameController::class, 'index']);
+    Route::get('frames/{id}',  [FrameController::class, 'show']);
 
     // difficulty
     Route::get('difficulty',  [DifficultyController::class, 'difficulty']);

@@ -17,17 +17,18 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'username' => $this->username,
+            'name' => $this->name,
             'email' => $this->email,
             'school' => $this->school,
             'city' => $this->city,
             'birthdate' => date('d-m-Y', substr($this->birthdate, 0, 10)),
             'city' => $this->city,
             'details' => [
-                'user_image' => $this->detail->user_image,
+                'user_image' => $this->detail->user_image !== null ? $this->detail->user_image : "",
                 'point' => $this->detail->point,
-                'user_color' => $this->detail->user_color,
-                'user_frame' => $this->detail->user_frame,
-                'user_title' => $this->detail->user_title,
+                'user_color' => $this->detail->user_color !== null ? $this->detail->user_color : 0,
+                'user_frame' => $this->detail->user_frame !== null ? $this->detail->user_frame : 0,
+                'user_title' => $this->detail->user_title !== null ? $this->detail->user_title : 0,
             ]
         ];
     }

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Soal;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class SoalController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +16,10 @@ class SoalController extends Controller
     public function index()
     {
         //
+        $active_dashboard = "active";
+
+        $users = User::all();
+        return view('admin.user.index', compact('active_dashboard', 'users'));
     }
 
     /**
@@ -41,10 +46,10 @@ class SoalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
         //
     }
@@ -52,10 +57,10 @@ class SoalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
     }
@@ -64,10 +69,10 @@ class SoalController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -75,10 +80,10 @@ class SoalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
     }

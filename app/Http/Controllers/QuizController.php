@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Soal;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Auth\IpController;
 use App\Http\Controllers\Controller;

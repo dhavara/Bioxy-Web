@@ -37,7 +37,13 @@ class LoginController extends Controller
                         'scope' => '*',
                     ]);
 
-                    return $response->json();
+                    return response([
+                        'id' => Auth::id(),
+                        'token_type' => $response->json()['token_type'],
+                        'expires_in' => $response->json()['expires_in'],
+                        'access_token' => $response->json()['access_token'],
+                        'refresh_token' => $response->json()['refresh_token'],
+                    ]);
                 }
                 else {
                     return response([
