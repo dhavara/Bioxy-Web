@@ -54,7 +54,7 @@ class DummySeeder extends Seeder
             'created_at' => \Carbon\Carbon::now()
         ]);
             // Frames
-        DB::table('bio11_users_colors')->insert([
+        DB::table('bio11_users_frames')->insert([
             'user_id' => '7',
             'frame_id' => '3',
             'created_at' => \Carbon\Carbon::now()
@@ -119,7 +119,7 @@ class DummySeeder extends Seeder
             'created_at' => \Carbon\Carbon::now()
         ]);
             // Frames
-        DB::table('bio11_users_colors')->insert([
+        DB::table('bio11_users_frames')->insert([
             'user_id' => '7',
             'frame_id' => '1',
             'created_at' => \Carbon\Carbon::now()
