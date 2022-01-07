@@ -81,18 +81,5 @@ class UserSeeder extends Seeder
             'created_at' => \Carbon\Carbon::now(),
             'email_verified_at' => \Carbon\Carbon::now()
         ]);
-
-        //Dummy Data
-        DB::table('bio11_users')->insert([
-            'username' => 'NotSpider',
-            'name' => 'Peter Parker',
-            'email' => 'peterparker@keld2021.com',
-            'password' => Hash::make('12345678'),
-            'school' => 'Midtown High School',
-            'city' => 'New York City',
-            'birthdate' => strtotime('10 August 2001'),
-            'created_at' => \Carbon\Carbon::now(),
-            'email_verified_at' => \Carbon\Carbon::now()
-        ]);
     }
 }

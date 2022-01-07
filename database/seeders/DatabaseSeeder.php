@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\UserHistory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
             InventorySeeder::class,
             RoleSeeder::class,
             UserRoleSeeder::class,
+            DummySeeder::class
         ]);
     }
 }

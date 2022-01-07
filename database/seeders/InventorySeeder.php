@@ -68,11 +68,5 @@ class InventorySeeder extends Seeder
             'user_id' => '4',
             'color_id' => '2'
         ]);
-
-        //Dummy Data
-        DB::table('bio11_users_titles')->insert([
-            'user_id' => '7',
-            'title_id' => '1'
-        ]);
     }
 }
