@@ -70,5 +70,11 @@ class UserRoleSeeder extends Seeder
             'user_id' => '6',
             'role_id' => '2',
         ]);
+
+        //Dummy Data
+        DB::table('bio11_users_roles')->insert([
+            'user_id' => '7',
+            'role_id' => '1',
+        ]);
     }
 }

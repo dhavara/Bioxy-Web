@@ -50,5 +50,12 @@ class UserDetailSeeder extends Seeder
             'user_image' => 'Willl.png',
             'created_at' => \Carbon\Carbon::now(),
         ]);
+
+        //Dummy Data
+        DB::table('bio11_users_details')->insert([
+            'user_id' => '7', // User
+            'user_title' => '1',
+            'created_at' => \Carbon\Carbon::now(),
+        ]);
     }
 }
