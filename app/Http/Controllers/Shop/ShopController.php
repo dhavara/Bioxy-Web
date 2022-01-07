@@ -13,6 +13,7 @@ use App\Models\UserColor;
 use App\Models\UserDetail;
 use App\Models\UserFrame;
 use App\Models\UserTitle;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -105,7 +106,8 @@ class ShopController extends Controller
 
                 UserColor::create([
                     'user_id' => Auth::user()->id,
-                    'color_id' => $item_id
+                    'color_id' => $item_id,
+                    'created_at' => \Carbon\Carbon::now()
                 ]);
 
                 $ip = new IpController();
