@@ -147,8 +147,8 @@ class ItemSeeder extends Seeder
             'price' => '1000'
         ]);
         DB::table('bio11_colors')->insert([
-            'name' => 'Kuning',
-            'hex_code' => 'yellow',
+            'name' => 'Pisang',
+            'hex_code' => '#FFE135',
             'price' => '1000'
         ]);
         DB::table('bio11_colors')->insert([
