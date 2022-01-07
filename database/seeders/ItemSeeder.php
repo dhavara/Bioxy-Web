@@ -221,5 +221,10 @@ class ItemSeeder extends Seeder
             'hex_code' => '#000080',
             'price' => '1500'
         ]);
+        DB::table('bio11_colors')->insert([
+            'name' => 'Burung Petir',
+            'hex_code' => '#bd1c1b',
+            'price' => '1750'
+        ]);
     }
 }
