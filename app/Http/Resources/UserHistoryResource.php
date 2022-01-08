@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use DateTimeZone;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserHistoryResource extends JsonResource
@@ -22,7 +23,7 @@ class UserHistoryResource extends JsonResource
             'total_correct' => $this->total_correct,
             'total_question' => $this->total_question,
             'difficulty' => $this->difficultData->difficulty,
-            'created_at' => $this->created_at,
+            'created_at' => date_format($this->created_at->setTimezone(new DateTimeZone('Asia/Jakarta')), 'H:i:s d-m-Y'),
         ];
     }
 }
