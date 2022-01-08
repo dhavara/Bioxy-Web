@@ -16,12 +16,13 @@ class UserHistoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'user_id' => $this->user_id,
+            'username' => $this->user->username,
             'point' => $this->point,
             'accuracy' => $this->accuracy,
             'total_correct' => $this->total_correct,
             'total_question' => $this->total_question,
             'difficulty' => $this->difficultData->difficulty,
+            'created_at' => $this->created_at,
         ];
     }
 }
