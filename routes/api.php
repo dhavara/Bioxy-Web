@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\Quiz\QuizController;
 use App\Http\Controllers\Api\SoalController;
 use App\Http\Controllers\Api\DifficultyController;
 use App\Http\Controllers\Api\FrameController;
+use App\Http\Controllers\Api\LeaderboardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,9 @@ Route::group(['middleware'=>'auth:api'], function() {
     // quiz
     Route::get('quiz/{difficulty}',  [QuizController::class, 'quiz']);
     Route::post('quiz/store',  [QuizController::class, 'store']);
+
+    // leaderboard
+    Route::get('leaderboard',  [LeaderboardController::class, 'leaderboard']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

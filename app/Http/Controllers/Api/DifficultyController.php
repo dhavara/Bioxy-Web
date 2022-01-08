@@ -20,7 +20,7 @@ class DifficultyController extends Controller
         Log::create([
             'table' => 'bio11_difficulties',
             'creator' => Auth::user()->id,
-            'path' => "Api\DifficultyController@index",
+            'path' => "Api\DifficultyController@difficulty",
             'desc' => "View all data in Difficulty",
             'ip' => $ip->getIp()
         ]);
