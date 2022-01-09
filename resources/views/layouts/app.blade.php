@@ -198,6 +198,16 @@ h2, .h2 {
 
 .bg-text {
     color: white;
+    background-color: #252932;
+    border-radius: 7px;
+}
+
+.bg-textonly{
+    color: white;
+}
+
+.sz-text{
+    font-size: 20px;
 }
     </style>
 </head>

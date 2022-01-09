@@ -8,7 +8,7 @@
         <div class="col-sm-6">
           <div class="message-box">
               <h1>Welcome to Bioxy Website</h1>
-              <p class="bg-text">Desc</p>
+              <p class="bg-text sz-text">Ayo kita belajar biologi dan pintar bersama-sama :) hanya di Bioxy!</p>
           </div>
         </div>
           <div class="col-sm-6">
@@ -32,7 +32,7 @@
       <div class="row justify-content-center text-center">
         <div class="col-lg-12">
             <h2 class="font-300">Cara Kerja Bioxy?</h2>
-            <p class="font-300 bg-text">Disinilah tempat dimana kita dapat belajar bagaimana menggunakan bioxy dengan bijak.</p>
+            <p class="font-300 bg-textonly">Disinilah tempat dimana kita dapat belajar bagaimana menggunakan bioxy dengan bijak.</p>
         </div>
     </div>
     <div class="timeline-page mt-5">
@@ -46,7 +46,7 @@
                 <div class="col-lg-6">
                     <div class="works works-description-right">
                         <h4>buatlah sebuah akun dengan register</h4>
-                        <p class="timeline-subtitle">Buatlah akun dengan mengisi biodata setelah menekan tombol register agar dapat memulai Bioxy dan mendapatkan manfaat dari aplikasi kami. Tenang aja semua data anda akan aman dijaga oleh perusahaan kami :)</p>
+                        <p class="timeline-subtitle bg-textonly">Buatlah akun dengan mengisi biodata setelah menekan tombol register agar dapat memulai Bioxy dan mendapatkan manfaat dari aplikasi kami. Tenang aja semua data anda akan aman dijaga oleh perusahaan kami :)</p>
                     </div>
                 </div>
             </div>
@@ -57,8 +57,8 @@
                 <div class="col-lg-6">
                     <div class="works works-description-left">
                         <h4>bermain dengan menekan tombol play</h4>
-                        <p class="timeline-subtitle">Setelah anda membuat akun, ditampilan bioxy anda akan muncul tombol play, dimana anda akan memulai bioxy yang sebenarnya, sebelum menekan tombol play disarankan untuk mempersiapkan diri dengan belajar yang giat :)</p>
-                        <p class="timeline-subtitle">Semangat teman-teman!</p>
+                        <p class="timeline-subtitle bg-textonly">Setelah anda membuat akun, ditampilan bioxy anda akan muncul tombol play, dimana anda akan memulai bioxy yang sebenarnya, sebelum menekan tombol play disarankan untuk mempersiapkan diri dengan belajar yang giat :)</p>
+                        <p class="timeline-subtitle bg-textonly">Semangat teman-teman!</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -78,8 +78,8 @@
                 <div class="col-lg-6">
                     <div class="works works-description-right">
                         <h4>belajar dari kekurangan</h4>
-                        <p class="timeline-subtitle">Setelah selesai bermain bioxy pasti banyak pelajaran yang kita dapat, disinilah waktunya untuk belajar dari kesalahan-kesalahan kita saat bermain bioxy dan mempersiapkan diri untuk bioxy selanjutnya!</p>
-                        <p class="timeline-subtitle">Tetap semangat yaa teman-teman :)</p>
+                        <p class="timeline-subtitle bg-textonly">Setelah selesai bermain bioxy pasti banyak pelajaran yang kita dapat, disinilah waktunya untuk belajar dari kesalahan-kesalahan kita saat bermain bioxy dan mempersiapkan diri untuk bioxy selanjutnya!</p>
+                        <p class="timeline-subtitle bg-textonly">Tetap semangat yaa teman-teman :)</p>
                     </div>
                 </div>
             </div>
@@ -94,12 +94,12 @@
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="panel panel-dark panel-colorful">
                 <div class="panel-body text-center">
-                	<p class="text-uppercase mar-btm text-sm">Desc</p>
+                	<p class="text-uppercase mar-btm text-sm">Contact</p>
                   <li class="nav-item btn btn-secondary">
-                    <a class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Instagram</a>
+                    <a class="nav-link" href="/contact">Contact Us</a>
                   </li>
                 	<hr>
-                	<small><span class="text-semibold"></span> Desc</small>
+                	<small><span class="text-semibold"></span> Jika ada masalah dan masukkan yang ingin anda sampaikan silahkan tekan tombol diatas</small>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12">
         	<div class="panel panel-info panel-colorful">
         		<div class="panel-body text-center">
-        			<p class="text-uppercase mar-btm text-sm">Earning</p>
+        			<p class="text-uppercase mar-btm text-sm">Story</p>
               <h3>Bioxy Short Story</h3>
               <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
                 Open Story

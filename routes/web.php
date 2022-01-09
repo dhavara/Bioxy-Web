@@ -23,6 +23,10 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Auth::routes();
 
 Route::get('/leaderboard', [App\Http\Controllers\LeaderboardController::class, 'index'])->name('leaderboard');
