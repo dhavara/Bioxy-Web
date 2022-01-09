@@ -149,7 +149,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
   </div>
   <div class="offcanvas-body">
-    <p class="colorp">Bioxy</p>
+    <p class="colorp">Bioxy adalah aplikasi yang bertujuan untuk mempelajari lebih banyak hal dari biologi terutama biologi kelas 11. Aplikasi ini dapat membantu anda dengan memberikan banyak pertanyaan dari tingkat kesulitan yang berbeda-beda dan dari soal tersebut anda akan mempelajari kesalahan maupun mempelajari soal-soal baru yang ada.</p>
   </div>
 </div>
 
