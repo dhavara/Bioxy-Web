@@ -28,7 +28,7 @@ class LoginController extends Controller
             if($check->detail['is_login'] == '0') {
                 if(Auth::attempt($user)) {
                     $this->isLogin(Auth::id());
-                    $response = Http::asForm()->post('http://bioxy.test:81/oauth/token', [
+                    $response = Http::asForm()->post('http://bioxy.nonah/oauth/token', [
                         'grant_type' => 'password',
                         'client_id' => $client->id /*'9530b116-04ad-4b7c-99b8-0b8f6723b5fd'*/,
                         'client_secret' => $client->secret /*'qbgwZKhzipAtol3rOBYKat5qo1BldVIkdcEH37a2'*/,
@@ -81,7 +81,7 @@ class LoginController extends Controller
             'refresh_token' => 'Refresh token required.'
         ]);
 
-        $response = Http::asForm()->post('http://bioxy.test:81/oauth/token', [
+        $response = Http::asForm()->post('http://bioxy.nonah/oauth/token', [
             'grant_type' => 'refresh_token',
             'refresh_token' => $request->refresh_token,
             'client_id' => $client->id,
