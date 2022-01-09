@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/keldteam/public_html/
-    - /bin/cp -r /home/keldteam/repositories/Bioxy-Web/ * $DEPLOYPATH
+    - /bin/cp -r /home/keldteam/repositories/Bioxy-Web/ $DEPLOYPATH
