@@ -47,7 +47,8 @@ class QuizController extends Controller
             'point' => $request->point,
             'accuracy' => $accuracy,
             'total_correct' => $request->total_correct,
-            'total_question' => $request->total_question
+            'total_question' => $request->total_question,
+            'created_at' => \Carbon\Carbon::now()
         ]);
 
         
