@@ -37,6 +37,7 @@
         margin: 0;
         overflow-x: hidden;
         padding-top:40px;
+        position: relative;
     }
 
     .timeline-page {
@@ -208,6 +209,17 @@ h2, .h2 {
 
 .sz-text{
     font-size: 20px;
+}
+
+.bioxydiv{
+    background-color: grey;
+      }
+
+.h-con{
+    color: black;
+}
+.p-con{
+    color: black;
 }
     </style>
 </head>
