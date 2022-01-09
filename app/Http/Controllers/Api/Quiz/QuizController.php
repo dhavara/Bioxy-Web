@@ -62,7 +62,7 @@ class QuizController extends Controller
         ]);
 
         $pointDifficulty = $request->point;
-        switch ($request->difficulty) {
+        switch (Difficulty::where('difficulty', $request->difficulty)->first()->id) {
             case 1:
                 $pointDifficulty *= 1;
                 break;
