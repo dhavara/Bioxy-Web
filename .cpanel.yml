@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/keldteam/public_html/
-    - /bin/cp * $DEPLOYPATH
+    - /bin/cp -a $DEPLOYPATH
