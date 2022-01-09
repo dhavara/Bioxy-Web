@@ -43,7 +43,7 @@ class QuizController extends Controller
 
         UserHistory::create([
             'user_id' => Auth::user()->id,
-            'difficulty' => $request->difficulty,
+            'difficulty' => Difficulty::where('difficulty', $request->difficulty)->first()->id,
             'point' => $request->point,
             'accuracy' => $accuracy,
             'total_correct' => $request->total_correct,
