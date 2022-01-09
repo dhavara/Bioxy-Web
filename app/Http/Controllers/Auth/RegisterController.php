@@ -62,8 +62,10 @@ class RegisterController extends Controller
             'school' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
             'birthdate' => ['required', 'date', 'max:255'],
+        
         ]);
     }
+    
 
     /**
      * Create a new user instance after a valid registration.
