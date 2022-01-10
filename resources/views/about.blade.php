@@ -33,7 +33,7 @@
                                     height="120px" width="120px" />
                             @endif
                         </div>
-                        <div class="pt-3 d-flex justify-content-center">
+                        <div class="pt-4 d-flex justify-content-center">
                           <hr class="w-50">
                         </div>
                         <h4><a href="/profile/id={{$data->user->id}}">{{$data->user->name}}</a></h4>
