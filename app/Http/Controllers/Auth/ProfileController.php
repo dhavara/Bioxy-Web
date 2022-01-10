@@ -89,7 +89,7 @@ class ProfileController extends Controller
             if ($detail->user_image != null) {
                 $extension = strrchr($detail->user_image, '.');
                 $img_name = $request->username . $extension;
-                rename(public_path() . '/img/user//' . $detail->user_image, public_path() . '\img\user\\' . $img_name);
+                rename(public_path() . '/img/user//' . $detail->user_image, public_path() . '/img/user//' . $img_name);
             }
         }
 
