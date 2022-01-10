@@ -29,9 +29,14 @@ class HomeController extends Controller
 
     public function about()
     {
+        $ids = [6,3,5,4];
+        $admins = Role::where('id', 2)->first()->users->where('id', '<>', 1);
+        $sorted = $admins->sortBy(function($admins) use ($ids) {
+            return array_search($admins->user_id, $ids);
+        });
         return view('about', [
             'active_about' => "active",
-            "admins" => Role::where('id', 2)->first()->users->where('id', '<>', 1)
+            "admins" => $sorted
         ]);
     }
 }
