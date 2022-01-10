@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -24,5 +25,13 @@ class HomeController extends Controller
     public function index()
     {
         
+    }
+
+    public function about()
+    {
+        return view('about', [
+            'active_about' => "active",
+            "admins" => Role::where('id', 2)->first()->users->where('id', '<>', 1)
+        ]);
     }
 }

@@ -21,7 +21,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     
-    <link href="css/stylesheet.css?v=<?php echo time();?>" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/stylesheet.css') }}?v=<?php echo time();?>" rel="stylesheet" type="text/css">
 
     <!-- Slick -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
@@ -67,6 +67,9 @@
                             </li>
                         @endif
                         @endguest
+                        <li class="nav-item">
+                            <a class="nav-link {{ $active_about ?? '' }}" href="{{ route('about') }}">Tentang Kami </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

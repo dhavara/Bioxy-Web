@@ -10,4 +10,12 @@ class Role extends Model
     use HasFactory;
 
     protected $table = 'bio11_roles';
+
+    protected $fillable = [
+        'name',
+    ];
+
+    public function users() {
+        return $this->hasMany(UserRole::class, 'role_id', 'id');
+    }
 }

@@ -23,12 +23,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-
 Auth::routes();
 
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/leaderboard', [App\Http\Controllers\LeaderboardController::class, 'index'])->name('leaderboard');
 Route::get('/profile/id={id}', [App\Http\Controllers\Auth\ProfileController::class, 'show']);
 
