@@ -78,8 +78,8 @@ class ProfileController extends Controller
         $img_name = null;
         $detail = UserDetail::findOrFail($request->id);
         if ($request->hasFile('img')) { // jika mengupload gambar
-            if (file_exists('\img\user\\' . $detail->user_image)) {
-                unlink(public_path() . '\img\user\\' . $detail->user_image);
+            if (file_exists('/img/user//' . $detail->user_image)) {
+                unlink(public_path() . '/img/user//' . $detail->user_image);
             }
             $image = $request->file('img');
             $img_name = $request->username .  '.' . $image->getClientOriginalExtension();
@@ -89,7 +89,7 @@ class ProfileController extends Controller
             if ($detail->user_image != null) {
                 $extension = strrchr($detail->user_image, '.');
                 $img_name = $request->username . $extension;
-                rename(public_path() . '\img\user\\' . $detail->user_image, public_path() . '\img\user\\' . $img_name);
+                rename(public_path() . '/img/user//' . $detail->user_image, public_path() . '\img\user\\' . $img_name);
             }
         }
 
