@@ -11,6 +11,7 @@
     <div class="main-body">
         <div class="card card-body bg-primary">
             <h3 class="text-light">Deskripsi Aplikasi Kami</h3>
+            <hr>
             <h4 class="text-light text-justify">
                 Bioxy adalah aplikasi yang bertujuan untuk mempelajari lebih banyak hal dari biologi terutama biologi kelas
                 11. Aplikasi ini dapat membantu anda dengan memberikan banyak pertanyaan dari tingkat kesulitan yang
@@ -32,7 +33,9 @@
                                     height="120px" width="120px" />
                             @endif
                         </div>
-                        <hr>
+                        <div class="pt-3 d-flex justify-content-center">
+                          <hr class="w-50">
+                        </div>
                         <h4><a href="/profile/id={{$data->user->id}}">{{$data->user->name}}</a></h4>
                     </div>
                 @endforeach
