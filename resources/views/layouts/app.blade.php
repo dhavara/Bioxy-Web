@@ -21,7 +21,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     
-    <link href="http://bioxy.keldteam.xyz/css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet" type="text/css">
 
     <!-- Slick -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
