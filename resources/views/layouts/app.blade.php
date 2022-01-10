@@ -21,7 +21,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     
-    <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet" type="text/css">
+    <link href="style.css?key=<?php echo time();?>" rel="stylesheet" type="text/css">
 
     <!-- Slick -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
